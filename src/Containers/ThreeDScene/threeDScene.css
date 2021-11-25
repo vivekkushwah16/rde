@@ -1,0 +1,182 @@
+.screen{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  opacity: 1;
+}
+  .exitScreen400{
+    transition: 400ms;
+    /* opacity: 0 !important; */
+    pointer-events:none !important;
+  }
+  .exitScreen{
+    transition: 1000ms;
+    opacity: 0 !important;
+    pointer-events:none !important;
+  }
+  .exitScreen .vignette{
+    /* transition: 1000ms; */
+    /* opacity: 0 !important; */
+    pointer-events:none !important;
+  }
+
+  .exitScreen400 #sidePanel{
+    left: -40% !important;
+    transition: 500ms;
+    opacity: 0 !important;
+  }
+  .exitScreen400 #bgImg{
+    opacity: 0 !important;
+    transition: 500ms;
+  }
+  .exitScreen400 #myBtn{
+    transform: scale(0.8) !important;
+    opacity: 0 !important;
+  }
+  .exitScreen #myBtn{
+    transform: scale(0.8) !important;
+    opacity: 0 !important;
+  }
+  .vignette {
+    pointer-events:all;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 200px rgba(0,0,0,0.9) inset;
+  }
+  .dfccc{
+    justify-content:center;
+    display:flex;
+    align-items:center;
+    flex-direction:column;
+  }
+  #sideChatButton{
+    position: absolute;
+    right: 0;
+    top: 0.1rem;
+    cursor: pointer;
+    transition: 250ms;
+  }
+  #sideChatButton:hover{ opacity: 0.99;}
+
+  #sideChatButtonvCall{
+    position: absolute;
+    right: 0;
+    top: 0.1rem;
+    cursor: pointer;
+    transition: 250ms;
+  }
+  #sideChatButtonvCall:hover{ opacity: 0.99;}
+
+.myBtn{
+    cursor: pointer;
+    opacity: 0.9;
+    transform: scale(1);
+    transition: 150ms;
+}
+
+.myBtn:hover{
+    transform: scale(1.04) !important;
+    opacity: 1 !important;
+    transition: 150ms;
+}
+.myBtn:active{
+    opacity: 0.7 !important;
+    transform: scale(1.05) !important;
+}
+
+#calender{
+    position: absolute;
+    bottom: 2.15rem;
+    left: 2rem;
+    width: 1.75rem;
+  }
+
+  #watermark{
+    position: absolute;bottom: 1.5rem;color: white;right: 1.5rem;opacity: 0.75;
+  }
+
+  .w80 {
+    width: calc(100% - 45.3vh) !important;
+}
+
+.w20 {
+    width: 45.3vh !important;
+}
+.r20{ 
+    right: 45.3vh !important;
+}
+.vCallToRight{
+    right: -3.7vh !important;
+    top: 0% !important;
+}
+body {
+    width:100%;
+    height:100%;
+    overflow: hidden;
+}
+
+.font{
+    font-family: Proxima Nova A;
+    font-style: normal;
+    font-weight: normal;
+  }
+
+#welcomeScreen {
+    border: 0;
+    left: 0;
+    background: url("https://storage.googleapis.com/djzs-bucket/NegotationAcademy/Textures/loaderBG_blurplus.jpg");
+    position: absolute;
+    top: 0%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    transition: 500ms;
+    flex-direction: column;
+}
+
+.gayab {
+    opacity: 0 !important;
+    pointer-events: none;
+}
+
+#welcomeBtn {
+    margin-top: 2rem;
+    cursor: pointer;
+}
+
+#welcomeBtn:hover {
+    opacity: 0.9;
+    transform: scale(1.1);
+}
+
+
+.tingle-modal{
+    
+    background: #ffffff00;
+  }
+  .tingle-modal__close{
+    opacity:0;
+  }
+  .tingle-modal-box__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0rem 0rem !important;
+  }
+
+  .tingle-modal-box {
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    background: #ffffff00;
+    border-radius: 0.5rem;
+    width: 70%;
+  }
+

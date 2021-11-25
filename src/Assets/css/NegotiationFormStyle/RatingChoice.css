@@ -1,0 +1,34 @@
+.RatingChoiceContainer{
+   
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Stars {
+    position: relative;
+    margin: 1rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+   
+.Stars input{
+    position: absolute;
+   opacity: 0;
+   width: 8rem;
+   height: 8rem;
+   cursor: pointer;
+   z-index: 2;
+}
+.selectedStar{
+    font-size: 8em;
+    cursor: pointer;
+    color: rgba(225, 225, 225, 1);
+
+
+}
+.checkedStar{
+    color: rgba(255, 147, 72, 1);
+
+}

@@ -1,0 +1,249 @@
+.communityBox__body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* transform: translateY(100px); */
+  margin-top: 6rem;
+}
+
+.communityBox__body_scroll{
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  flex-direction: column;
+  /* transform: translateY(100px); */
+  margin-top: 6rem;
+  max-height: calc(100vh - 6rem);
+  overflow: auto;
+  padding-bottom: 2rem;
+}
+
+.poll-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+}
+.poll-btn,
+.live-text {
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  z-index: 3;
+  position: sticky;
+  background-color: #fff;
+  color: initial;
+  padding: 1rem 1.5rem;
+}
+.poll-btn:hover {
+  cursor: pointer;
+  background-color: gray;
+  color: #fff;
+}
+.pbh {
+  background-color: gray;
+  color: #fff;
+}
+.poll-form {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  box-sizing: border-box;
+  width: 95%;
+  margin: 0 5px;
+  margin-bottom: 10px;
+  padding: 0rem 1rem;
+  border-radius: 5px;
+
+  transform: translateY(10px);
+}
+.poll-form >p{
+  font-size: 1.15rem;
+}
+
+.poll-form-data {
+  margin: 0 9px;
+  margin-bottom: 10px;
+  transform: translateY(20px);
+}
+.poll-form > input[type="text"],
+.pollBox__options > input[type="text"] {
+  outline: none;
+  border: none;
+  width: 100%;
+  border-bottom: 1px solid black;
+  padding: 10px 0;
+  padding-right: 5px;
+  margin-bottom: 10px;
+}
+.poll-ans-list {
+  padding-bottom: 2rem;
+  font-size: 1rem;
+}
+
+.poll-form > :last-child,
+.poll-form > :first-child {
+  margin: 8px 0;
+}
+.poll-form > ::placeholder {
+  color: black;
+  opacity: 1; /* Firefox */
+}
+.live-mark {
+  display: inline-block;
+  background-color: red;
+  height: 8px;
+  width: 8px;
+  margin-right: 5px;
+  border-radius: 50%;
+}
+
+.poll-form > :-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: black;
+}
+
+.poll-form > ::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: black;
+}
+.create-new-btn-optns {
+  text-align: center;
+  box-shadow: 0 0 8px #7f7d7d;
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  width: 100%;
+  padding-top: 3.8rem;
+  padding-bottom: 20px;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+.create-new-btn-optns > :first-child {
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.create-new-btn-optns > :last-child {
+  cursor: pointer;
+}
+.dlt-mdl {
+  /* border: 1px solid red; */
+  z-index: 20;
+  display: flex;
+  height: 100%;
+  position: absolute;
+  top: -1rem;
+  left: 0;
+  right: 0;
+  /* bottom: 0; */
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.dlt-mdl-bdy {
+  height: 8rem;
+  width: 85%;
+  border-radius: 5px;
+  background-color: #fff;
+  display: flex;
+  text-align: center;
+  padding: 0 1.5rem;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.feedback-modal-cls-btn {
+  position: absolute;
+  top: -25px;
+  right: 0;
+  cursor: pointer;
+}
+/* success icon */
+.success-positioning {
+  width: 100%;
+  margin-bottom: 20px;
+  align-items: center;
+  justify-content: center;
+}
+.success-icon {
+  display: inline-block;
+  width: 8em;
+  height: 8em;
+  font-size: 8px;
+  border-radius: 50%;
+  border: 4px solid #ea7e33;
+  background-color: #fff;
+  position: relative;
+  overflow: hidden;
+  transform-origin: center;
+  animation: showSuccess 180ms ease-in-out;
+  transform: scale(1);
+}
+.success-icon__tip,
+.success-icon__long {
+  display: block;
+  position: absolute;
+  height: 4px;
+  background-color: #ea7e33;
+  border-radius: 10px;
+}
+.success-icon__tip {
+  width: 2.4em;
+  top: 4.3em;
+  left: 1.4em;
+  transform: rotate(45deg);
+  animation: tipInPlace 300ms ease-in-out;
+  animation-fill-mode: forwards;
+  animation-delay: 180ms;
+  visibility: hidden;
+}
+.success-icon__long {
+  width: 4em;
+  transform: rotate(-45deg);
+  top: 3.7em;
+  left: 2.75em;
+  animation: longInPlace 140ms ease-in-out;
+  animation-fill-mode: forwards;
+  visibility: hidden;
+  animation-delay: 440ms;
+}
+@keyframes showSuccess {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes tipInPlace {
+  from {
+    width: 0em;
+    top: 0em;
+    left: -1.6em;
+  }
+  to {
+    width: 2.4em;
+    top: 4.3em;
+    left: 1.4em;
+    visibility: visible;
+  }
+}
+@keyframes longInPlace {
+  from {
+    width: 0em;
+    top: 5.1em;
+    left: 3.2em;
+  }
+  to {
+    width: 4em;
+    top: 3.7em;
+    left: 2.75em;
+    visibility: visible;
+  }
+}

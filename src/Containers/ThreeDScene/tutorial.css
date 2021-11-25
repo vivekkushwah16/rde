@@ -1,0 +1,239 @@
+#iconTutorialScreen{
+  -webkit-backdrop-filter: blur(24px);
+  backdrop-filter: blur(24px);
+  transition:1000ms;
+  z-index: 4 !important;
+  background-color: #82828266;
+  top:0;
+}
+#iconTutorialNetwork{
+    position: absolute;
+    top: 4rem;
+    left: 2.5rem;
+    background-color: rgba(255, 255, 255, 0.848);
+    width: 1.5px;
+    height: 15rem;
+}
+
+#iconTutorialNetworkRound{
+    position: absolute;
+    top: 18.6rem;
+    left: 2.34rem;
+    background-color: rgb(255 255 255);
+    width: 0.4rem;
+    height: 0.4rem;
+    border-radius: 50%;
+}
+
+#iconTutorialNetworkText{
+    position: absolute;    
+    font-size: 1.25rem;
+    top: 20.4rem;
+    left: 2.3rem;
+}
+
+#iconTutorialAgenda{
+    position: absolute;
+    bottom: 5rem;
+    left: 2.8rem;
+    background-color: rgba(255, 255, 255, 0.548);
+    width: 1.5px;
+    height: 15rem;
+}
+
+#iconTutorialAgendaRound{
+    position: absolute;
+    bottom: 19.6rem;
+    left: 2.64rem;
+    background-color: rgb(255 255 255);
+    width: 0.4rem;
+    height: 0.4rem;
+    border-radius: 50%;
+}
+
+#iconTutorialAgendaText{
+    font-size: 1.25rem;
+    position: absolute;
+    bottom: 21.4rem;
+    left: 2.75rem;
+}
+
+
+#iconTutorialSound{
+    position: absolute;
+    bottom: 4.8rem;
+    left: 6.45rem;
+    background-color: rgba(255, 255, 255, 0.548);
+    width: 1.5px;
+    height: 11.2rem;
+}
+#iconTutorialSoundRound{
+    position: absolute;
+    bottom: 15.9rem;
+    left: 6.4rem;
+    background-color: rgb(255 255 255);
+    width: 0.4rem;
+    height: 0.4rem;
+    border-radius: 50%;
+}
+
+#iconTutorialSoundText{
+    position: absolute;
+    bottom: 17.6rem;
+    left: 6.3rem;
+    font-size: 1.25rem;
+}
+
+#iconTutorialMap1{
+    position: absolute;
+    bottom: 4.8rem;
+    left: 9.85rem;
+    background-color: rgba(255, 255, 255, 0.548);
+    width: 1.5px;
+    height: 8rem;
+}
+#iconTutorialMap1Round{
+    position: absolute;
+    bottom: 12.4rem;
+    left: 9.8rem;
+    background-color: rgb(255 255 255);
+    width: 0.4rem;
+    height: 0.4rem;
+    border-radius: 50%;
+}
+
+#iconTutorialMap1Text{
+    position: absolute;
+    bottom: 14rem;
+    left: 9.7rem;
+    font-size: 1.25rem;
+}
+
+#iconTutorialMap{
+    position: absolute;
+    top: 6rem;
+    right: 1.75rem;
+    background-color: rgba(255, 255, 255, 0.548);
+    width: 1.5px;
+    height: 15rem;
+}
+#iconTutorialMapRound{
+    position: absolute;
+    top: 20.6rem;
+    right: 1.58rem;
+    background-color: rgb(255 255 255);
+    width: 0.4rem;
+    height: 0.4rem;
+    border-radius: 50%;
+}
+
+
+#iconTutorialMapText{
+    position: absolute;
+    top: 22.3rem;
+    right: 1.5rem;
+    font-size: 1.25rem;
+}
+
+#iconTutorialText{
+    pointer-events: none;
+}
+
+.animateTutorial>#iconTutorialText{
+    animation: fade0to1 1s ease-in-out;
+}
+.animateTutorial>#iconTutorialNetwork{
+    animation: fade0to1 2s ease-in-out;
+}
+.animateTutorial>#iconTutorialNetworkRound{
+    animation: fade0to1 2.25s ease-in-out;
+}
+.animateTutorial>#iconTutorialNetworkText{
+    animation: fade0to1 2.75s ease-in-out;
+}
+.animateTutorial>#iconTutorialNetwork{
+    animation: fade0to1 3s ease-in-out;
+}
+.animateTutorial>#iconTutorialNetworkRound{
+    animation: fade0to1 3.25s ease-in-out;
+}
+.animateTutorial>#iconTutorialNetworkText{
+    animation: fade0to1 3.75s ease-in-out;
+}
+.animateTutorial>#iconTutorialSound{
+    animation: fade0to1 4s ease-in-out;
+}
+.animateTutorial>#iconTutorialSoundRound{
+    animation: fade0to1 4.25s ease-in-out;
+}
+.animateTutorial>#iconTutorialSoundText{
+    animation: fade0to1 4.75s ease-in-out;
+}
+.animateTutorial>#iconTutorialMap1{
+    animation: fade0to1 5s ease-in-out;
+}
+.animateTutorial>#iconTutorialMap1Round{
+    animation: fade0to1 5.25s ease-in-out;
+}
+.animateTutorial>#iconTutorialMap1Text{
+    animation: fade0to1 5.75s ease-in-out;
+}
+.animateTutorial>#iconTutorialMap{
+    animation: fade0to1 6s ease-in-out;
+}
+.animateTutorial>#iconTutorialMapRound{
+    animation: fade0to1 6.25s ease-in-out;
+}
+.animateTutorial>#iconTutorialMapText{
+    animation: fade0to1 6.75s ease-in-out;
+}
+.animateTutorial>#iconTutorialScreenBtn{
+    animation: fade0to1 8s ease-in-out;
+}
+
+
+@-moz-keyframes fade0to1 {
+    0% {
+      opacity: 0;
+    } 
+    50% {
+        opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @-webkit-keyframes fade0to1 {
+    0% {
+        opacity: 0;
+      } 
+      50% {
+          opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+  }
+  @-o-keyframes fade0to1 {
+    0% {
+        opacity: 0;
+      } 
+      50% {
+          opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+  }
+  @keyframes fade0to1 {
+    0% {
+        opacity: 0;
+      } 
+      50% {
+          opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+  }
+  

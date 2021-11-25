@@ -1,0 +1,1 @@
+export const ERR_CODE_NOTLOGGEDIN = "notLoggedIn"

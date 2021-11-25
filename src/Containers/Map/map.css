@@ -1,0 +1,204 @@
+#mapChild{
+    position: absolute;height: 100%;display: flex;
+      justify-content: center;
+      align-items: center;width: 100%;    
+      /* background: rgb(0 0 0 / 22%); */
+      webkit-backdrop-filter: blur(1px);backdrop-filter: blur(1px);pointer-events: none;
+}
+.introHeadingText{
+    width: auto;
+    height: auto;
+    font-family: Proxima Nova A;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 4rem;
+    text-align: center;
+    color: white;
+    position: absolute;
+    top:6rem;
+    left:6rem;
+    text-align: initial;
+}
+.introSubHeadingText{
+  font-weight: 300;
+  left:0rem !important;
+  top:4rem !important;
+  width: auto;
+  height: auto;
+  font-family: Proxima Nova A;
+  font-style: normal;
+  font-size: 4rem;
+  text-align: center;
+  color: white;
+  position: absolute;
+  text-align: initial;
+}
+#mapTile{
+    margin-top: 2rem;margin-right: 10rem;position: absolute; width: 80%;
+}
+
+#mapSegments{
+    margin-right: 8rem;position: absolute; width: 80%;height:100%;display:flex;justify-content: center;align-items: center;
+}
+
+
+.activateOpacity{
+    opacity: 1 !important;
+    transition: 500ms ease-in-out;
+  }
+  .active {
+    opacity: 1 !important;
+    pointer-events: all !important;
+    transform: scale(1) !important;
+    z-index: 9 !important;
+    /* background-color: white !important; */
+    transition: 500ms ease-in-out;
+  }
+  .inactive {
+    opacity: 0 !important;
+    pointer-events: none !important;
+    transform: scale(0) !important;
+    /* background-color: white !important; */
+    transition: 500ms ease-in-out;
+  }
+  
+#mapMenu{
+    position: absolute;
+    width: 15rem;
+    bottom: 4rem;
+    left: calc(80% - 2rem);
+    display: flex;
+    justify-content: center;
+    align-items: initial;
+    flex-direction: column;
+  }
+
+  
+  #map{
+      top:0;
+    width: 100%;
+    height: 100%;
+    z-index: -3;
+    position: absolute;
+    background: rgb(0 0 0 / 35%);
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    opacity: 0;
+    /* transform: scale(0.7);  */
+    pointer-events: none;
+    webkit-backdrop-filter: blur(18px);
+    backdrop-filter: blur(18px);
+    transition: 400ms;
+  }
+
+  .blur{
+    z-index: -1 !important;
+    background: rgba(0, 0, 0, 0.17);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    position: absolute;
+    width: 110%;
+    height: 110%;
+  }
+  .vignette {
+    pointer-events:all;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 200px rgba(0,0,0,0.9) inset;
+  }
+
+  .vignetteDark {
+    pointer-events:none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 300px rgba(0,0,0,0.98) inset;
+  }
+  .circleMap{
+    background:#828080c4;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    opacity: 0.5;
+    transform: scale(1);
+    transition: 350ms;
+  }
+  .subMapMenu{
+    pointer-events:all;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-top:0.5rem;
+    padding-bottom:0.5rem;
+    transform: scale(1);
+    transition: 350ms;
+  }
+
+  .activeSubMenu .mapText{
+    font-weight: bold !important;
+    font-size: 1.25rem !important;
+    opacity:1 !important;
+    transition: 350ms;
+  }
+  .activeSubMenu .circleMap{
+    opacity:1 !important;
+    transform: scale(1.2) !important;
+    transition: 350ms;
+  }
+
+  .subMapMenu:hover .mapText{
+    font-weight: bold !important;
+    opacity:1 !important;
+    transition: 350ms;
+  }
+  .subMapMenu:hover .circleMap{
+    opacity:1 !important;
+    transform: scale(1.5) !important;
+    transition: 350ms;
+  }
+
+  .mapText{
+    padding-left: 0.5rem;
+    text-align: initial;
+    width: auto;
+    height: auto;
+    font-family: Proxima Nova A;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.25rem;
+    line-height: 122.9%;
+    opacity:0.5;
+    color: #FFFFFF;
+    transform: scale(1);
+    transition: 350ms;
+  }
+
+  #enterSubMapMenu{
+    pointer-events:all;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 1rem 0rem;
+    opacity:0.85;
+  }
+
+  #enterSubMapMenu:hover{
+    opacity:1 !important;
+    transition: 350ms;
+  }
+
+  #crossMapBtn{
+    pointer-events: all;
+    /* position: absolute;top:2rem;right:2rem; */
+    width:10rem;cursor: pointer;
+
+    padding-bottom: 1rem;
+  }

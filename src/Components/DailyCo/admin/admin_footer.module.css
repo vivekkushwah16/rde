@@ -1,0 +1,37 @@
+/* ### footer box ### */
+.footerBox { padding: 0.75rem 0.5rem; display: flex; align-items: center; justify-content: center; width: 100%; background: #3F3F3F; z-index: 1; }
+.footerBox > .btn { padding: 1.375rem 2.5rem; border-radius: 6rem; font-size: 1.25rem; line-height: normal; font-weight: 300; }
+.footerBox_info_container{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+/* ### .footerBox button ### */
+.footerBox__buttons_list { list-style-type: none;  display: flex; align-items: center; justify-content: center; width: 100%; }
+.footerBox__buttons_list > li { margin: 0 1rem; border-radius: 1.5625rem; display: flex; color: #fff; align-items: center; background:rgba(89, 89, 89, 0.6); }
+.footerBox__buttons_list > li > span { padding: 0 1rem 0 0; font-size: 1.25rem; }
+.icon_btn { color: #fff; cursor: pointer; position: relative; z-index: 0; text-decoration: none; border: 1px solid rgba(89, 89, 89, 0.6); font-size: 1.4rem; height: 3.125rem; width: 3.125rem; min-height: 3.125rem; min-width: 3.125rem; border-radius: 1.5625rem; transition: all 0.3s; background:rgba(89, 89, 89, 0.6); }
+.icon_btn.icon_btn__nobg { background: transparent; border-color: transparent; }
+.icon_btn__lg { font-size: 1.7rem; height: 4rem; width: 4rem; border-radius: 2rem; }
+.icon_btn__red { background: #F04453; color: #ffffff; border-color: #F04453; outline: none; }
+.icon_btn:focus { outline: none; }
+.icon_btn:disabled, .icon_btn.icon_btn__disabled { opacity: 0.5; }
+.icon_btn:disabled ~ span, .icon_btn.icon_btn__disabled ~ span { opacity: 0.5; }
+.icon_btn.icon_btn__small { height: 2rem; width: 2rem; min-height: 2rem; min-width: 2rem; font-size: 0.75rem; }
+.footerBox__counter { padding: 0.5rem 1rem; font-size: 1.125rem; border-radius: 0.5rem; font-weight: 700; align-items: center; color: #FF0000; background: rgba(0, 0, 0, 0.6); }
+
+/* Tablet Portrait size to standard 960 (devices and browsers) */
+@media only screen and (max-width: 1200px) {
+}
+
+/* All Mobile Sizes (devices and browser) */
+@media only screen and (max-width: 992px) {
+}
+
+/* All Mobile Sizes (devices and browser) */
+@media only screen and (max-width: 767px) {
+}
+
+/* All Mobile Sizes (devices and browser) */
+@media only screen and (max-width: 480px) {
+}

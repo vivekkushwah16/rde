@@ -1,0 +1,103 @@
+.FormsWrapper {
+  z-index: 1;
+  position: relative;
+  height: 100%;
+  background: rgba(255, 255, 255, 0);
+  user-select: none;
+  color: #000;
+}
+.FormsBgImage {
+  width: 100%;
+  height: 100%;
+}
+.FormsBgImage img {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+.FormsContent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  backdrop-filter: blur(3px);
+  background: rgba(255, 255, 255, 0);
+  display: flex;
+  justify-content: center;
+}
+
+.formNav .goBack {
+  background: rgba(0, 0, 0, 1);
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+  border-radius: 1.5rem;
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  color: #fff;
+  cursor: pointer;
+
+  box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.25);
+}
+.formNav .timeLoader {
+  position: absolute;
+  top: -0.3rem;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#svgCircleProgress1{
+  transform: rotate(-90deg);
+}
+#svgCircleProgressPath1 {
+  stroke: #000000;
+  stroke-width: 4;
+  fill: transparent;
+  stroke-dasharray: 125;
+  stroke-dashoffset: 125;
+
+}
+.startLoader{
+  animation:60s loadTimer linear forwards !important ;
+}
+@keyframes loadTimer {
+ 0%{
+  stroke-dashoffset: 125;
+ }  
+ 100%{
+  stroke-dashoffset: 0;
+ }
+}
+.loaderBorder{
+  position: absolute;
+  top: 0;
+  left: 0;
+  stroke: #d4d4d4;
+  stroke-width: 4;
+  fill: transparent;
+  stroke-dasharray: 125;
+  stroke-dashoffset: 0;
+  z-index: -1;
+  opacity: 0.5;
+}
+#percent {
+  font-family: Arial;
+  font-size: 14px;
+  font-weight: bold;
+  position: absolute;
+  text-align: center;
+}
+@keyframes spinner {
+  0% {
+    width: 0rem;
+    height: 0rem;
+  }
+  100% {
+    width: 3rem;
+    height: 3rem;
+  }
+}

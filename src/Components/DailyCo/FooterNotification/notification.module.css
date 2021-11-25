@@ -1,0 +1,29 @@
+.footer_notification{
+    color: #fff;
+    font-size: 1.45rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: left;
+    /* width: 0; */
+}
+
+.footer_notification > .blink{
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    padding: 0.5rem;
+    background: red;
+    box-shadow: 0px 0px 0px 10px #ff000075;
+    animation: blink 2s forwards infinite;
+    margin-right: 0.75rem;
+}
+
+@keyframes blink {
+    0%,100% {
+        box-shadow: 0px 0px 0px 10px #ff000075;
+    }
+    50% {
+        box-shadow: 0px 0px 0px 5px #ff00002e;
+    }
+}

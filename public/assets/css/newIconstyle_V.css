@@ -1,0 +1,38 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../newIconfonts/icomoon.eot?bgz5ia');
+  src:  url('../newIconfonts/icomoon.eot?bgz5ia#iefix') format('embedded-opentype'),
+    url('../newIconfonts/icomoon.ttf?bgz5ia') format('truetype'),
+    url('../newIconfonts/icomoon.woff?bgz5ia') format('woff'),
+    url('../newIconfonts/icomoon.svg?bgz5ia#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-poll:before {
+  content: "\e510";
+}
+.icon-Participant:before {
+  content: "\e93e";
+}
+
+.icon-settings:before {
+  content: "\e94e";
+  color: #fff;
+}

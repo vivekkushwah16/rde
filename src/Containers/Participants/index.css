@@ -1,0 +1,59 @@
+.user-profile__title {
+    text-transform: capitalize;
+}
+
+.user-profile {
+    cursor: pointer;
+}
+
+.user-notification {
+    position: relative;
+}
+
+.user-notification::after {
+    content: ' ';
+    width: 0.85rem;
+    height: 0.85rem;
+    background: #DE1B1B;
+    border-radius: 50%;
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    border: #f2f2f2 solid 0.15rem;
+}
+.user-online-dot::after{
+    background: #36DE1B;
+}
+.user-offline-dot::after{
+    background: #A7A7A7;
+}
+
+.notification_count {
+    position: absolute;
+    right: 0;
+    margin: 1rem;
+    background: #535E95;
+    color: white;
+    width: 1.75rem;
+    height: 1.75rem;
+    text-align: center;
+    display: flex;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+}
+
+.notification_count.user-profile__image--red {
+    background: #955386;
+}
+
+.notification_count.user-profile__image--green {
+    background: #538995;
+}
+
+.enterArrow {
+    transform: rotate(180deg);
+    position: absolute;
+    right: 0;
+    margin: 1rem;
+}

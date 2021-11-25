@@ -1,0 +1,89 @@
+/* ### sidebar ### */
+.sidebar { color:#000; position: fixed; top: 0; right: 0; width: 30.625rem; margin-right: -30.625rem; transition: 500ms ease-in-out;  height: 100%; z-index: 10; background: #F2F2F2;
+    /* overflow-y: auto;  */}
+.sidebar_ctrl_btn {
+    width: 5rem;
+    height: 100%;
+    background: #fff;
+    position: absolute;
+    top: 0rem;
+    left: -5rem;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+    font-size: 1.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: #555151; 
+}
+
+.sidebar_ctrl_btn i {
+    transition: 0.25s;
+    transform: rotate(0deg);
+ }
+
+.sidebar_ctrl_btn_closed i {
+   transform: rotate(180deg);
+}
+.sidebar__body { padding: 5.5625rem 0 1rem; overflow: auto; height: 100%; }
+.sidebar__title { padding: 1rem 2.325rem 0; color: #383838; font-size: 1.5rem; }
+.sidebar__title.withArrow { 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+ }
+ .sidebar__title.withArrow  > i{
+     font-size: 1rem;
+     cursor: pointer;
+     transform: rotate(0);
+     transition: 0.25s;
+ }
+
+.sidebar__title.withArrow.closed  > i{
+    transform: rotate(180deg);
+}
+
+
+.sidebar.active { margin-right: 0;     z-index: 10 !important;}
+
+/* ### sidebar tabs ### */
+.sidebar__tabs { min-width: 30.625rem; display: flex; font-size: 0.875rem; list-style-type: none; background: #fff; z-index: 1; }
+.sidebar__tabs > li { width: 100%; text-align: center; display: flex; justify-content: center; }
+.sidebar__tabs > li > a { padding: 1.8175rem 0rem; position: relative; display: flex; flex-direction: column; align-items: center; text-align: center; text-decoration: none; color: #000; justify-content: center; }
+.sidebar__tabs > li > a > i { font-size: 1.625rem; display: inline-block; margin-bottom: 0.75rem; }
+.sidebar__tabs > li > a::after { content: ""; display: none; position: absolute; left: 0; bottom: 0; width: 100%; height: 4px; border-radius: 4px; background: #000; }
+.sidebar__tabs > li > a.active::after { display: block; }
+
+/* ### sidebar menu ### */
+.sidebar__menu { padding: 1rem 0 0rem; list-style-type: none; }
+.sidebar__menu > li { display: block; }
+
+/* ### user profile block ### */
+.user-profile { padding: 0.5rem 6rem 0.5rem 2rem; padding-left: 2.325rem; color: rgba(56, 56, 56, 0.7); position: relative; display: block; text-decoration: none; display: flex; align-items: center; }
+.chat-header .user-profile {padding-left: 1.0rem; }
+.user-profile__image { margin-right: 1rem; height: 3.625rem; width: 3.625rem; min-height: 3.625rem; min-width: 3.625rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.25rem; background: #535E95; }
+.user-profile__title { font-size: 1.15rem; }
+.user-profile__title > small { display: block; font-size: 0.875rem; }
+.user-profile__image.user-profile__image--red { background: #955386; }
+.user-profile__image.user-profile__image--green { background: #538995; }
+
+.user-profile__buttons { padding: 0.5rem; position: absolute; right: 0; top: 0; }
+.user-profile__button { margin: 0 0.25rem; padding: 1rem; border: none; font-size: 1.5rem; border-radius: 50%; line-height: 1.5rem; color: #707070; background: transparent; border: medium none; }
+.user-profile__button.active { background: #707070; color: #fff; border: medium none;  }
+
+/* Tablet Portrait size to standard 960 (devices and browsers) */
+@media only screen and (max-width: 1200px) {
+}
+
+/* All Mobile Sizes (devices and browser) */
+@media only screen and (max-width: 992px) {
+}
+
+/* All Mobile Sizes (devices and browser) */
+@media only screen and (max-width: 767px) {
+}
+
+/* All Mobile Sizes (devices and browser) */
+@media only screen and (max-width: 480px) {
+}

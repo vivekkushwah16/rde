@@ -1,0 +1,24 @@
+.not-card-btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.not-card-btn-container .poll-btn {
+  margin-right: 0.45rem;
+  padding: 0.85rem 1rem;
+}
+
+.not-time-container {
+  display: flex;
+  justify-content: flex-end;
+  color: #a9a9a9;
+  margin: 0;
+}
+
+.not-time-container.admin {
+  flex-direction: column;
+}
+
+.poll-form-container {
+  margin-bottom: 3rem;
+}

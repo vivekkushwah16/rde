@@ -1,0 +1,191 @@
+.mediaModal {
+    position: fixed;
+    padding: 0rem 1rem;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 25;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgb(255 255 255 / 60%);
+    backdrop-filter: blur(12px);
+    /* background-color: rgba(0, 0, 0, 0.85); */
+    animation: 0.25s FadeIn forwards;
+}
+.componentFrameClose{
+    width:67% !important;
+}
+.componentFrame{
+    width:85vw !important;
+    height: calc(67vw * 0.6)!important;
+}
+.mediaModal_container {
+    position: relative;
+    width: 75vw;
+    height: calc(75vw * 0.6);
+    opacity: 0;
+    animation: 0.25s scaleUp forwards;
+    animation-delay: 0.25s;
+    box-shadow: rgb(128 128 128 / 38%) 0px 0px 6px 3px;
+    border-radius: 0.5rem;
+}
+
+.mediaModal_container_iframe {
+    width: 75%;
+    height: 85%;
+}
+.mediaModalCloseBtn{
+    font-size: 1.2rem;cursor:pointer;width: 76%;text-align: end;padding: 0.5rem;
+}
+.mediaModal_container_closeBtn {
+    position: absolute;
+    top: -1.25rem;
+    right: -1.25rem;
+    width: 3rem;
+    height: 3rem;
+    z-index: 2;
+    background-image: url(../../Assets/Images/closeBtn.png);
+    background-size: contain;
+    background-position: center;
+    cursor: pointer;
+    transform: scale(1);
+    transition: 0.25s;
+    border-radius: 50%;
+}
+
+.mediaModal_container_closeBtn:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 6px 2px #ffffff;
+}
+
+.mediaModal_container_iframe .mediaModal_container_closeBtn {
+   top: 0rem;
+   right: 0rem;
+   margin: 1.5rem;
+}
+
+@keyframes FadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes scaleUp {
+    0% {
+        opacity: 0;
+        transform: scale(0.6);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.mediaModal_container_image{
+    background: #fff;
+    height: calc(75vw * 0.42);
+}
+
+.mediaModal_container>img {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+    border: 0.35rem solid white;
+    border-radius: 0.15rem;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.295);
+}
+
+.mediaModal_container iframe {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+    border-radius: 0.5rem;
+    border: solid 0.15rem #fff;
+    box-shadow: 0px 2px 9px 3px #80808082;
+    background: #fff;
+}
+
+.mediaModal_container_loader {
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lds-dual-ring {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+}
+
+.lds-dual-ring:after {
+    content: " ";
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border-radius: 50%;
+    border: 6px solid #fff;
+    border-color: #fff transparent #fff transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
+}
+
+.mediaModalCloser {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    cursor: url("data:image/svg+xml,%3Csvg width='19' height='19' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15.514.535l-6.42 6.42L2.677.536a1.517 1.517 0 00-2.14 0 1.517 1.517 0 000 2.14l6.42 6.419-6.42 6.419a1.517 1.517 0 000 2.14 1.517 1.517 0 002.14 0l6.419-6.42 6.419 6.42a1.517 1.517 0 002.14 0 1.517 1.517 0 000-2.14l-6.42-6.42 6.42-6.418a1.517 1.517 0 000-2.14 1.516 1.516 0 00-2.14 0z' fill='%23FFF' fill-rule='nonzero'/%3E%3C/svg%3E"),auto;
+}
+
+@keyframes lds-dual-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@media only screen and (max-width: 991px) and (orientation: landscape) {
+    .mediaModal_container {
+        position: relative;
+        width: calc(75vh * 1.77);
+        height: calc(75vh);
+    }
+    .mediaModal_container_image{
+        background: #fff;
+        height: calc(75vw * 2.33);
+    }
+}
+
+@media only screen and (max-width: 991px) and (orientation: portrait) {
+    .mediaModal_container {
+        position: relative;
+        width: 96vw;
+        height: calc(96vw * 0.6);
+    }
+    .mediaModal_container_image{
+        background: #fff;
+        height: calc(75vw * 0.42);
+    }
+    .pdf-full {
+        height: 75vh;
+    }
+    .mediaModal_container_closeBtn {
+        position: absolute;
+        top: 0;
+        right: calc(50% - 1.5rem);
+    }
+}

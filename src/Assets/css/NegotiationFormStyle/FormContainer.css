@@ -1,0 +1,89 @@
+.FormContainer{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    padding: 3.5rem;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    flex-direction: column;
+    border-radius: 5px;
+}
+.Question{
+    width: 70%;
+}
+.Question p{
+    color: rgba(234, 126, 51, 1);
+    text-transform: capitalize;
+    font-size: 1.7rem;
+    margin: 0;
+    margin-top: 0.5rem;
+    text-align: center;
+}
+.Question h1{
+    font-size: 2.7rem;
+    line-height: 2.9rem;
+    margin: 0;
+    margin-top: 0.8rem;
+    color: #000;
+    text-align: center;
+}
+.ContainerFooter{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 2rem;
+}
+.goNext,.goBack{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff; 
+    border-radius: 3rem;
+    background: rgba(0, 0, 0, 1);
+   width: 10rem;
+   padding: 1.2rem;
+   text-align: center;
+   /* height: 4rem; */
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.25);
+
+}
+.disabled_submit{
+    opacity: 0.8;
+    cursor: not-allowed;
+}
+
+.goBack{
+    margin-right: 2rem;
+    background: rgb(109, 108, 108);
+}
+
+.selectedOption_quiz{
+    color: #fff!important;
+    background: #000!important;
+}
+
+.selectionRight_blink{
+    /* background-color:rgba(96, 173, 83, 1); */
+    /* animation: 0.5s forwards right_blink; */
+    animation-name: right_blink;
+    animation-delay: 0.5s;
+    animation-duration: 0.65s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes right_blink{
+    0%,50%,100%{
+        color: #fff;
+        background-color:rgba(96, 173, 83, 0.6);
+    }
+    25%,75%{
+        color: #fff;
+        background-color:rgba(96, 173, 83, 0.8);
+    }
+}

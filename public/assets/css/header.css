@@ -1,0 +1,46 @@
+/* ### header Box ### */
+.headerBox { padding: 0; display: flex; justify-content: space-between; min-height: 5.25rem; position: absolute; left: 0; top: 0; width: 100%; background: #141414; z-index: 9; }
+.headerBox__menu { padding: 0.5rem; margin-right: 0.5rem; background: transparent; border: none; font-size: 1.25rem; color: #fff; }
+.headerBox__inner { padding: 1rem 1.25rem; width: 100%; display: flex; align-items: center; justify-content: space-between; padding-right: 6rem;}
+.headerBox__left { padding: 0; width: 100%; display: flex; align-items: center; }
+
+.headerBox__flags { list-style-type: none; display: flex; margin-right: 0.5rem; }
+.headerBox__flags > li { padding: 0 0.25rem; }
+.headerBox__flags > li > a { display: block; width: 1.325rem; height: 1.325rem; border-radius: 50%; overflow: hidden; }
+
+/* ### breadcrumb ### */
+.breadcrumb { list-style-type: none; }
+.breadcrumb > li { padding: 0.75rem 0.625rem; position: relative; font-size: 0.875rem; display: inline-block; align-items: center; color: #fff; }
+.breadcrumb > li:before { position: absolute; left: -0.325rem; padding: 0; content: ">"; font-weight: 400; display: inline-block; align-items: center; color: #747474; }
+.breadcrumb > li:first-child { padding-left: 0; }
+.breadcrumb > li:first-child::before { display: none; }
+.breadcrumb > li > a { display: inline-block; text-decoration: none; color: #747474; font-weight: 400; }
+
+/* ### header dropdown ### */
+.header-dropdown { position: relative; }
+.header-dropdown__btn { padding: 0.75rem 0.625rem; display: inline-block; white-space: nowrap; font-size: 1.25rem; text-decoration: none; color: #fff; font-weight: 400; }
+.header-dropdown__btn .icon-angle-down:before { margin-left: 0.25rem; font-size: 0.75rem; }
+.header-dropdown__list { display: none; padding: 0 0.5rem 0.5rem 0; list-style-type: none; position: absolute; right: -1.25rem; top: 100%; width: 100%; min-width: 11.25rem; border-radius: 0.75rem; background: #222222; }
+.header-dropdown__list.active { display: block; }
+.header-dropdown__list li { display: block; font-size: 1.125rem; line-height: 1.25rem; }
+.header-dropdown__list li a { padding: 0.625rem 1rem; display: block; text-decoration: none; color: #747474; }
+.header-dropdown__list li a:hover { color: #fff; font-weight: 700; }
+.header-dropdown:hover .header-dropdown__list { display: block; }
+
+.headerBox__left { display: flex; align-items: center; }
+
+/* Tablet Portrait size to standard 960 (devices and browsers) */
+@media only screen and (max-width: 1200px) {
+}
+
+/* All Mobile Sizes (devices and browser) */
+@media only screen and (max-width: 992px) {
+}
+
+/* All Mobile Sizes (devices and browser) */
+@media only screen and (max-width: 767px) {
+}
+
+/* All Mobile Sizes (devices and browser) */
+@media only screen and (max-width: 480px) {
+}

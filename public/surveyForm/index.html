@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"
+        integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf"
+        crossorigin="anonymous"></script>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css">
+    <link rel="stylesheet" href="./main.css">
+    <style>
+        .com{
+            margin-left: 0 !important;
+        }
+        .d-none {
+            display: none !important;
+        }
+
+        body {
+            background-color: #eee
+        }
+
+        label.radio {
+            cursor: pointer
+        }
+
+        label.radio input {
+            position: absolute;
+            top: 0;
+            left: 0;
+            visibility: hidden;
+            pointer-events: none
+        }
+
+        label.radio span {
+            padding: 4px 0px;
+            border: 1px solid red;
+            display: inline-block;
+            color: red;
+            width: 100px;
+            text-align: center;
+            border-radius: 3px;
+            margin-top: 7px;
+            text-transform: uppercase
+        }
+
+        label.radio input:checked+span {
+            border-color: red;
+            background-color: red;
+            color: #fff
+        }
+
+        .ans {
+            margin-left: 36px !important
+        }
+        .btn:focus {
+            outline: 0 !important;
+            box-shadow: none !important
+        }
+
+        .btn:active {
+            outline: 0 !important;
+            box-shadow: none !important
+        }
+
+
+        .starrating>input {
+            display: none;
+        }
+
+        /* Remove radio buttons */
+
+        .starrating>label:before {
+            content: "\f005";
+            /* Star */
+            margin: 2px;
+            font-size: 8em;
+            font-family: FontAwesome;
+            display: inline-block;
+        }
+
+        .starrating>label {
+            color: #222222;
+            /* Start color when not clicked */
+        }
+
+        .starrating>input:checked~label {
+            color: #ffca08;
+        }
+
+        /* Set yellow color when star checked */
+
+        .starrating>input:hover~label {
+            color: #ffca08;
+        }
+
+        .custom-control-input {
+            position: unset;
+            margin-left: 20px;
+            left: unset;
+            
+        }
+        .custom-control-label{
+            cursor: pointer;
+        }
+
+        .input-space {
+            background-color: #f1f1f1;
+            border-radius: 20px;
+            margin: 10px 0px 10px;
+            padding: 10px;
+        }
+
+        .starFont {
+            font-size: 0.4rem;
+        }
+
+        .mt-2 {
+            margin-top: 2rem;
+        }
+        .com{
+            margin-left: 0 !important;
+        }
+        .d-none{
+            display: none;
+        }
+        .d-block{
+            display: block;
+        }
+        .mb-2 {
+            margin-bottom: 2rem;
+        }.text-danger {
+            color: #EA7E33 !important;
+    /* color: #0d98d0!important; */
+}
+
+h5{
+    font-size: 1.1rem;
+}
+/* @media screen and(max-width: 600 orientation: portrait) { */
+    
+    @media screen and (max-width: 600px) {
+    .cus-container{
+        padding: 0;
+        width: 100%;
+        margin-top: 0 !important;
+    }
+/* } */
+}
+   
+    </style>
+</head>
+
+<body>
+    <div class="container mt-5 mb-5 cus-container">
+        <div class="d-flex justify-content-center row" id="surveyContainer">
+            <div class="col-md-10 col-lg-10" >
+                 <!-- <div style="width: 100%;">
+                    <img src="./assets/img/header.png" alt="" height="100%" width="100%"/>
+                </div> -->
+                <div class="border">
+                    <div class="question bg-white p-3 border-bottom" style="
+                        /* background:linear-gradient(to right bottom, #0869a8, #0d96d4); */
+                        background-color: #EA7E33 !important;
+                        ">
+                        <div class="d-flex flex-row justify-content-between align-items-center mcq">
+                            <h4 style="color: white ;text-align: center; width: 100%;">
+                                Survey Form
+                            </h4>
+                        </div>
+                    </div>
+
+                    <!-- <div id="loader" style="display: block;">
+                        <img src="./LoaderV.gif" alt="loader">
+                    </div> -->
+
+                    <div id="finalMessage" class="question bg-white p-3 border-bottom" style="display: none;">
+                        <div class="">
+                           
+                            <h6 class="mb-2">
+                                Thanks for your valuable feedback.
+                                <!-- <div class="d-flex flex-row justify-content-center align-items-center mt-2">
+                                    <button id="retake"
+                                        class="btn btn-primary border-success align-items-center btn-success"
+                                        type="submit">Download Certificate<i class="fa fa-angle-right ml-2"></i></button>
+                                </div> -->
+                            </h6>
+                        </div>
+                    </div>
+
+
+                    <form id="mainForm" style="display: block;">
+                        <!-- <div class="question bg-white p-3 border-bottom">
+                            <div class="">
+                                <h6 class="mb-3" style="text-align: center;">
+                                    In compliance to MMC Regulation, kindly fill in the feedback form and return after completion of the CME.
+                                    <div style="text-decoration: underline; font-weight: 700;">Grade Performance on scale 1-3 (1-Satisfactory, 2-Good, 3-Excellent).</div>
+
+                                </h6>
+                                <h6 class="mb-2">
+                                    <div><b>Subject:</b> COVID 19: Beginning of a New Era</div><br>
+                                    <div><b>Date:</b> 21<sup>st</sup> and 22<sup>nd</sup> August 2021</div><br>
+                                    
+                                </h6>
+                                  
+                                <h6 class="mb-2">
+                                    Dear Member,<br>
+                                    Your feedback is valuable for us. Please provide your feedback to the questions
+                                    below:
+                                </h6>
+                            </div>
+                        </div> -->
+
+                   
+
+                        <!-- <div class="question bg-white p-3 border-bottom">
+                           
+                            <div class="question bg-white p-3 border-bottom">
+                                <div class="d-flex flex-row align-items-center question-title">
+                                    <h3 class="text-danger">Q</h3>
+                                    <h5 class="mt-1 ml-2">1. What did you like about the event?</h5>
+                                </div>
+                                <div class="ans ml-2">
+                                    <input type="text" class="form-control" id="session1" name="question1" required>
+                                </div>
+                            </div>
+                        </div> -->
+
+                        <!-- <div class="question bg-white p-3 border-bottom">
+                           
+                            <div class="question bg-white p-3 border-bottom">
+                                <div class="d-flex flex-row align-items-center question-title">
+                                    <h3 class="text-danger">Q</h3>
+                                    <h5 class="mt-1 ml-2">2. What did you dislike about the event?</h5>
+                                </div>
+                                <div class="ans ml-2">
+                                    <input type="text" class="form-control" id="session2" name="question2" required>
+                                </div>
+                            </div>
+                        </div> -->
+
+                        <!-- <div class="question bg-white p-3 border-bottom">
+                            <div class="d-flex flex-row align-items-center question-title">
+                                <h3 class="text-danger">Q</h3>
+                                <h5 class="mt-1 ml-2" id='q3-title'>
+                                    3. How would you rate the overall digital experience of the</h5>
+                            </div>
+                            <div class="ans ml-2">
+
+                                <div class="container">
+                                    <div class="starrating risingstar d-flex justify-content-center flex-row-reverse">
+                                        <input type="radio" id="star5" name="questions3" value="5" /><label
+                                            class="starFont" for="star5" title="5 star"> </label>
+                                        <input type="radio" id="star4" name="questions3" value="4" /><label
+                                            class="starFont" for="star4" title="4 star"> </label>
+                                        <input type="radio" id="star3" name="questions3" value="3" /><label
+                                            class="starFont" for="star3" title="3 star"> </label>
+                                        <input type="radio" id="star2" name="questions3" value="2" /><label
+                                            class="starFont" for="star2" title="2 star"> </label>
+                                        <input type="radio" id="star1" name="questions3" value="1" /><label
+                                            class="starFont" for="star1" title="1 star"> </label>
+                                    </div>
+                                </div>
+                                <div class="question bg-white p-3 border-bottom">
+                                    <div class="ans ml-2 com">
+                                        <input type="text" class="form-control" id="session3_com" placeholder="Additional Comment (Optional)" name="question3_comment">
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+
+                        <div class="question bg-white p-3 border-bottom">
+                            <div class="d-flex flex-row align-items-center question-title">
+                                <h3 class="text-danger">Q</h3>
+                                <h5 class="mt-1 ml-2">
+                                    0. Was the event length too long too short or about right?</h5>
+                            </div>
+                            <div class="ans ml-2">
+
+                                <div class="container">
+                                    <div class="starrating risingstar d-flex justify-content-center flex-row-reverse">
+                                        <input type="radio" id="star5_4" name="questions4" value="5" /><label
+                                            class="starFont" for="star5_4" title="5 star"> </label>
+                                        <input type="radio" id="star4_4" name="questions4" value="4" /><label
+                                            class="starFont" for="star4_4" title="4 star"> </label>
+                                        <input type="radio" id="star3_4" name="questions4" value="3" /><label
+                                            class="starFont" for="star3_4" title="3 star"> </label>
+                                        <input type="radio" id="star2_4" name="questions4" value="2" /><label
+                                            class="starFont" for="star2_4" title="2 star"> </label>
+                                        <input type="radio" id="star1_4" name="questions4" value="1" /><label
+                                            class="starFont" for="star1_4" title="1 star"> </label>
+                                    </div>
+                                </div>
+                                <div class="question bg-white p-3 border-bottom">
+                                    <div class="ans ml-2 com">
+                                        <input type="text" class="form-control" id="session4_com" name="question4_comment" placeholder="Additional Comment (Optional)">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- <div class="question bg-white p-3 border-bottom">
+                           
+                            <div class="question bg-white p-3 border-bottom">
+                                <div class="d-flex flex-row align-items-center question-title">
+                                    <h3 class="text-danger">Q</h3>
+                                    <h5 class="mt-1 ml-2" id="q5-title">5. Which respiratory topics would you want us to cover in upcoming</h5>
+                                </div>
+                                <div class="ans ml-2">
+                                    <input type="text" class="form-control" id="session5" name="question5" required>
+                                </div>
+                            </div>
+                        </div> -->
+
+
+                        <div class="question bg-white p-3 border-bottom">
+                            <div class="d-flex flex-row align-items-center question-title">
+                                <h3 class="text-danger">Q</h3>
+                                <h5 class="mt-1 ml-2">
+                                    1. Ask any question to the Experts.</h5>
+                            </div>
+                            <div class="container">
+                                <div class="ans ml-2" style="display: flex;flex-direction: column;">
+                                   
+                                    <div class="question bg-white p-3" >
+                                        <div class="ans ml-2 com">
+                                            <input type="text" class="form-control"  id="session6_com" placeholder="Question 1" name="question1_ask1">
+                                        </div>
+                                    </div>
+                                     <div class="question bg-white p-3" >
+                                        <div class="ans ml-2 com">
+                                            <input type="text" class="form-control"  id="session6_com" placeholder="Question 2" name="question1_ask2">
+                                        </div>
+                                    </div>
+                                     <div class="question bg-white p-3" >
+                                        <div class="ans ml-2 com">
+                                            <input type="text" class="form-control"  id="session6_com" placeholder="Question 3" name="question1_ask3">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+ 
+                        <div class="question bg-white p-3 border-bottom">
+                            <div class="d-flex flex-row align-items-center question-title">
+                                <h3 class="text-danger">Q</h3>
+                                <h5 class="mt-1 ml-2">
+                                    2. In your clinical practice, what % of Bronchiectasis patients need treatment with antibiotics?</h5>
+                            </div>
+                            <div class="container">
+                                <div class="ans ml-2" style="display: flex;flex-direction: column;">
+
+                                    <div class="custom-control custom-radio custom-control-inline input-space">
+                                        <input type="radio" id="questions2_1" name="questions2"
+                                            class="custom-control-input questions2"
+                                            value="Less than 50%" required>
+                                        <label class="custom-control-label" for="questions2_1"
+                                            style="width: 100%;">Less than 50%</label>
+                                    </div>
+                                    <div class="custom-control custom-radio custom-control-inline input-space">
+                                        <input type="radio" id="questions2_2" name="questions2"
+                                            class="custom-control-input questions2"
+                                            value="50-75%" required>
+                                        <label class="custom-control-label" for="questions2_2"
+                                            style="width: 100%;">50-75%</label>
+                                    </div>
+                                    <div class="custom-control custom-radio custom-control-inline input-space">
+                                        <input type="radio" id="questions2_3" name="questions2"
+                                            class="custom-control-input questions2"
+                                            value="75-99%" required>
+                                        <label class="custom-control-label" for="questions2_3"
+                                            style="width: 100%;">75-99%</label>
+                                    </div>
+                                    <div class="custom-control custom-radio custom-control-inline input-space">
+                                        <input type="radio" id="questions2_4" name="questions2"
+                                            class="custom-control-input questions2" value="100%" required>
+                                        <label class="custom-control-label" for="questions2_4"
+                                            style="width: 100%;">100%
+                                            <!-- <input type="text" style="display: none;" name="questions6-4"
+                                                class="form-control" id="questions6-4-input"> </label> -->
+                                    </div>
+                                    <!-- <div class="custom-control custom-radio custom-control-inline input-space">
+                                        <input type="radio" id="questions6-5" name="questions6-5"
+                                            class="custom-control-input questions6" value="Other">
+                                        <label class="custom-control-label" for="questions6-5"
+                                            style="width: 100%;">Other
+                                            <input type="text" style="display: none;" name="questions6-5"
+                                                class="form-control" id="questions6-5-input"> </label> - 
+                                    </div> -->
+                                    <!-- <div class="question bg-white p-3 border-bottom" >
+                                        <div class="ans ml-2 com">
+                                            <input type="text" class="form-control d-none"  id="session6_com" placeholder="Please Write your Comment" name="question6_comment">
+                                        </div>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div> 
+                        <div class="question bg-white p-3 border-bottom">
+                            <div class="d-flex flex-row align-items-center question-title">
+                                <h3 class="text-danger">Q</h3>
+                                <h5 class="mt-1 ml-2">
+                                    2A. In your clinical practice, what % of Bronchiectasis patients need treatment with antibiotics?</h5>
+                            </div>
+                            <div class="container">
+                                <div class="ans ml-2" style="display: flex;flex-direction: column;">
+
+                                    <div class="custom-control custom-radio custom-control-inline input-space">
+                                        <input type="radio" id="questions2_1" name="questions2"
+                                            class="custom-control-input questions2"
+                                            value="Less than 50%" required>
+                                        <label class="custom-control-label" for="questions2_1"
+                                            style="width: 100%;">Less than 50%<br><img style="width:12rem" src="https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/rich_media_quiz/topic/rmq_antibiotic_resistance/getty_rf_photo_of_antibiotics.jpg?resize=692px:*"></label>
+                                    </div>
+                                    <div class="custom-control custom-radio custom-control-inline input-space">
+                                        <input type="radio" id="questions2_2" name="questions2"
+                                            class="custom-control-input questions2"
+                                            value="50-75%" required>
+                                        <label class="custom-control-label" for="questions2_2"
+                                            style="width: 100%;">50-75%<br><img style="width:12rem" src="https://hips.hearstapps.com/netdoctor.cdnds.net/15/51/1450185850-g-antibiotics-496660071.jpg"></label>
+                                    </div>
+                                    <div class="custom-control custom-radio custom-control-inline input-space">
+                                        <input type="radio" id="questions2_3" name="questions2"
+                                            class="custom-control-input questions2"
+                                            value="75-99%" required>
+                                        <label class="custom-control-label" for="questions2_3"
+                                            style="width: 100%;">75-99%<br><img style="width:12rem" src="https://images.newscientist.com/wp-content/uploads/2019/07/22121016/m78t8y-c-fahroni_alamy-stock-photo.jpg"></label>
+                                    </div>
+                                    <div class="custom-control custom-radio custom-control-inline input-space">
+                                        <input type="radio" id="questions2_4" name="questions2"
+                                            class="custom-control-input questions2" value="100%" required>
+                                        <label class="custom-control-label" for="questions2_4"
+                                            style="width: 100%;">100%<br><img style="width:12rem" src="https://www.1mg.com/articles/wp-content/uploads/2018/06/antibiotic-resistance.png"></label>
+                                            <!-- <input type="text" style="display: none;" name="questions6-4"
+                                                class="form-control" id="questions6-4-input"> </label> -->
+                                    </div>
+                                    <!-- <div class="custom-control custom-radio custom-control-inline input-space">
+                                        <input type="radio" id="questions6-5" name="questions6-5"
+                                            class="custom-control-input questions6" value="Other">
+                                        <label class="custom-control-label" for="questions6-5"
+                                            style="width: 100%;">Other
+                                            <input type="text" style="display: none;" name="questions6-5"
+                                                class="form-control" id="questions6-5-input"> </label> - 
+                                    </div> -->
+                                    <!-- <div class="question bg-white p-3 border-bottom" >
+                                        <div class="ans ml-2 com">
+                                            <input type="text" class="form-control d-none"  id="session6_com" placeholder="Please Write your Comment" name="question6_comment">
+                                        </div>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div> 
+
+                        <div class="question bg-white p-3 border-bottom">
+                            <div class="d-flex flex-row align-items-center question-title">
+                                <h3 class="text-danger">Q</h3>
+                                <h5 class="mt-1 ml-2">
+                                    3. In your clinical practice, which class of antibiotics do you prefer for the management of Bronchiectasis?</h5>
+                            </div>
+                            <div class="container">
+                                <div class="ans ml-2" style="display: flex;flex-direction: column;">
+
+                                    <div class="custom-control custom-radio custom-control-inline input-space">
+                                        <input type="radio" id="questions3-1" name="questions3"
+                                            class="custom-control-input questions3"
+                                            value="Macrolide antibiotics" required>
+                                        <label class="custom-control-label" for="questions3-1"
+                                            style="width: 100%;">Macrolide antibiotics</label>
+                                    </div>
+                                    <div class="custom-control custom-radio custom-control-inline input-space">
+                                        <input type="radio" id="questions3-2" name="questions3"
+                                            class="custom-control-input questions3"
+                                            value="Nebulized antibiotic: Aminoglycosides" required>
+                                        <label class="custom-control-label" for="questions3-2"
+                                            style="width: 100%;">Nebulized antibiotic: Aminoglycosides</label>
+                                    </div>
+                                    <div class="custom-control custom-radio custom-control-inline input-space">
+                                        <input type="radio" id="questions3-3" name="questions3"
+                                            class="custom-control-input questions3"
+                                            value="Nebulized antibiotic: Polymixins" required>
+                                        <label class="custom-control-label" for="questions3-3"
+                                            style="width: 100%;">Nebulized antibiotic: Polymixins</label>
+                                    </div>
+                                    <div class="custom-control custom-radio custom-control-inline input-space">
+                                        <input type="radio" id="questions3-4" name="questions3"
+                                            class="custom-control-input questions3" value="Fluroquinolones" required>
+                                        <label class="custom-control-label" for="questions3-4"
+                                            style="width: 100%;">Fluroquinolones
+                                            <!-- <input type="text" style="display: none;" name="questions6-4"
+                                                class="form-control" id="questions6-4-input"> </label> -->
+                                    </div>
+                                    <!-- <div class="custom-control custom-radio custom-control-inline input-space">
+                                        <input type="radio" id="questions6-5" name="questions6-5"
+                                            class="custom-control-input questions6" value="Other">
+                                        <label class="custom-control-label" for="questions6-5"
+                                            style="width: 100%;">Other
+                                            <input type="text" style="display: none;" name="questions6-5"
+                                                class="form-control" id="questions6-5-input"> </label> - 
+                                    </div> -->
+                                    <!-- <div class="question bg-white p-3 border-bottom" >
+                                        <div class="ans ml-2 com">
+                                            <input type="text" class="form-control d-none"  id="session6_com" placeholder="Please Write your Comment" name="question6_comment">
+                                        </div>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div> 
+
+
+                        <div class="question bg-white p-3 border-bottom">
+                            <div class="d-flex flex-row align-items-center question-title">
+                                <h3 class="text-danger">Q</h3>
+                                <h5 class="mt-1 ml-2">
+                                    4. What is the most common duration for which you prescribe antibiotics for the management of Bronchiectasis?</h5>
+                            </div>
+                            <div class="container">
+                                <div class="ans ml-2" style="display: flex;flex-direction: column;">
+                                    <!-- <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                                    <label for="vehicle1"> I have a bike</label><br>
+                                    <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+                                    <label for="vehicle2"> I have a car</label><br>
+                                    <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+                                    <label for="vehicle3"> I have a boat</label><br><br>
+                                    <input type="submit" value="Submit"> -->
+
+                                    <div class="custom-control custom-checkbox custom-control-inline input-space">
+                                        <input type="checkbox" id="questions4-1" name="questions4"
+                                            class="custom-control-input questions4"
+                                            value="7 Days" required>
+                                        <label class="custom-control-label" for="questions4-1"
+                                            style="width: 100%;">7 Days</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox custom-control-inline input-space">
+                                        <input type="checkbox" id="questions4-2" name="questions4"
+                                            class="custom-control-input questions4"
+                                            value="14 Days" required>
+                                        <label class="custom-control-label" for="questions4-2"
+                                            style="width: 100%;">14 Days</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox custom-control-inline input-space">
+                                        <input type="checkbox" id="questions4-3" name="questions4"
+                                            class="custom-control-input questions4"
+                                            value="21 Days" required>
+                                        <label class="custom-control-label" for="questions4-3"
+                                            style="width: 100%;">21 Days</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox custom-control-inline input-space">
+                                        <input type="checkbox" id="questions4-4" name="questions4"
+                                            class="custom-control-input questions4" value="1 month" required>
+                                        <label class="custom-control-label" for="questions4-4"
+                                            style="width: 100%;">1 month
+                                            <!-- <input type="text" style="display: none;" name="questions4-4"
+                                                class="form-control" id="questions4-4-input"> </label> -->
+                                    </div>
+                                    <div class="custom-control custom-checkbox custom-control-inline input-space">
+                                        <input type="checkbox" id="questions4-5" name="questions4"
+                                            class="custom-control-input questions4" value="1-3 months" required>
+                                        <label class="custom-control-label" for="questions4-5"
+                                            style="width: 100%;">1-3 months
+                                            <!-- <input type="text" style="display: none;" name="questions3-5"
+                                                class="form-control" id="questions3-5-input"> </label>  -->
+                                    </div>
+                                    <div class="custom-control custom-checkbox custom-control-inline input-space">
+                                        <input type="checkbox" id="questions4-6" name="questions4"
+                                            class="custom-control-input questions4" value="More than 3 months" required>
+                                        <label class="custom-control-label" for="questions4-6"
+                                            style="width: 100%;">More than 3 months
+                                    </div>
+                                    <!-- <div class="question bg-white p-3 border-bottom" >
+                                        <div class="ans ml-2 com">
+                                            <input type="text" class="form-control d-none"  id="session6_com" placeholder="Please Write your Comment" name="question6_comment">
+                                        </div>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div> 
+
+                        
+                           <div class="question bg-white p-3 border-bottom">
+                            <div class="d-flex flex-row align-items-center question-title">
+                                <h3 class="text-danger">Q</h3>
+                                <h5 class="mt-1 ml-2">
+                                    5. Which is the most appropriate purpose for the use of nebulized antibiotics in the management of Bronchiectasis patient?</h5>
+                            </div>
+                            <div class="container">
+                                <div class="ans ml-2" style="display: flex;flex-direction: column;">
+                                    <!-- <div class="container"> -->
+                                        <!-- <ul class="reorderable-list"> -->
+                                          <li class="reorderable-list__item dropzone input-space" draggable="true">
+                                            As an eradication therapy
+                                          </li>
+                                          <li class="reorderable-list__item dropzone input-space" draggable="true">
+                                            As a maintenance therapy pre exacerbations
+                                          </li>
+                                          <li class="reorderable-list__item dropzone input-space" draggable="true">
+                                            As a maintenance therapy post exacerbations
+                                          </li>
+                                        <!-- </ul> -->
+                                      
+                                      <!-- </div> -->
+                                    <!-- <div class="custom-control custom-radio custom-control-inline input-space">
+                                        <input type="radio" id="questions5-1" name="questions5"
+                                            class="custom-control-input questions5"
+                                            value="As an eradication therapy" required>
+                                        <label class="custom-control-label" for="questions5-1"
+                                            style="width: 100%;">As an eradication therapy</label>
+                                    </div>
+                                    <div class="custom-control custom-radio custom-control-inline input-space">
+                                        <input type="radio" id="questions5-2" name="questions5"
+                                            class="custom-control-input questions5"
+                                            value="As a maintenance therapy post exacerbations" required>
+                                        <label class="custom-control-label" for="questions5-2"
+                                            style="width: 100%;">As a maintenance therapy post exacerbations</label>
+                                    </div> -->
+                                   
+                                    <!-- <div class="question bg-white p-3 border-bottom" >
+                                        <div class="ans ml-2 com">
+                                            <input type="text" class="form-control d-none"  id="session6_com" placeholder="Please Write your Comment" name="question6_comment">
+                                        </div>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+
+
+                          
+                         <!-- <div class="question bg-white p-3 border-bottom">
+                            <div class="d-flex flex-row align-items-center question-title">
+                                <h3 class="text-danger">Q</h3>
+                                <h5 class="mt-1 ml-2">6. Pick key reasons to attend this conference</h5>
+                            </div>
+                            <div class="rate">
+                                <div class="emoji emoji6">🙂</div>
+                                <div class="review review6">
+                                    Average
+                                </div>
+                                <input class="emojislider6" type="range" min="0" max="4" step="1"  required>
+                            </div>
+                        </div> -->
+                        
+                        <div class="question bg-white p-3 border-bottom">
+                            <div class="d-flex flex-row align-items-center question-title">
+                                <h3 class="text-danger">Q</h3>
+                                <h5 class="mt-1 ml-2">6. i) In your opinion, which of the following bacterial pathogens are predominant in AOM?</h5>
+                            </div>
+                            <div class="d-flex flex-row align-items-center justify-content-center question-title">
+                                <table>
+                                    <tr>
+                                        <th>Please indicate your overall satisfaction with the following aspects of the conference:</th>
+                                        <!-- <th></th> -->
+
+                                        <th>Most Common</th>
+                                        <th>Common</th>
+                                        <th>Less Common</th>
+                                        <th>Least Common</th>
+                                        <th>Strongly disagree</th>
+                                    </tr>
+
+                                    <tr>
+                                        <td>S. pneumoniae</td>
+
+                                        <td> <input type="radio" id="questions2_1" name="questions2_1"
+                                                value="Most Common" required></td>
+                                        <td> <input type="radio" id="questions2_1" name="questions2_1" value="Common"
+                                                required>
+                                        </td>
+                                        <td> <input type="radio" id="questions2_1" name="questions2_1"
+                                                value="Less Common" required></td>
+                                        <td> <input type="radio" id="questions2_1" name="questions2_1" value="Least Common"
+                                                required>
+                                        </td>
+                                        <td> <input type="radio" id="questions2_1" name="questions2_1"
+                                                value="Strongly disagree" required></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Non typeable H. influenzae (NTHi)</td>
+                                        <td> <input type="radio" id="questions2_2" name="questions2_2"
+                                                value="Most Common" required></td>
+                                        <td> <input type="radio" id="questions2_2" name="questions2_2" value="Common"
+                                                required>
+                                        </td>
+                                        <td> <input type="radio" id="questions2_2" name="questions2_2"
+                                                value="Less Common" required></td>
+                                        <td> <input type="radio" id="questions2_2" name="questions2_2" value="Least Common"
+                                                required>
+                                        </td>
+                                        <td> <input type="radio" id="questions2_2" name="questions2_2"
+                                                value="Strongly disagree" required></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>M. catarrhalis</td>
+
+                                        <td> <input type="radio" id="questions2_3" name="questions2_3"
+                                                value="Most Common" required></td>
+                                        <td> <input type="radio" id="questions2_3" name="questions2_3" value="Common"
+                                                required>
+                                        </td>
+                                        <td> <input type="radio" id="questions2_3" name="questions2_3"
+                                                value="Less Common" required></td>
+                                        <td> <input type="radio" id="questions2_3" name="questions2_3" value="Least Common"
+                                                required>
+                                        </td>
+                                        <td> <input type="radio" id="questions2_3" name="questions2_3"
+                                                value="Strongly disagree" required></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Group A Streptococcus</td>
+
+                                        <td> <input type="radio" id="questions2_4" name="questions2_4"
+                                                value="Most Common" required></td>
+                                        <td> <input type="radio" id="questions2_4" name="questions2_4" value="Common"
+                                                required>
+                                        </td>
+                                        <td> <input type="radio" id="questions2_4" name="questions2_4"
+                                                value="Less Common" required></td>
+                                        <td> <input type="radio" id="questions2_4" name="questions2_4" value="Least Common"
+                                                required>
+                                        </td>
+                                        <td> <input type="radio" id="questions2_4" name="questions2_4"
+                                                value="Strongly disagree" required></td>
+                                    </tr>
+
+
+                                </table>
+                            </div>
+                        </div>
+
+
+                        <!-- <div class="question bg-white p-3 border-bottom">
+                           
+                            <div class="question bg-white p-3 ">
+                                <div class="d-flex flex-row align-items-center question-title">
+                                    <h3 class="text-danger">Q</h3>
+                                    <h5 class="mt-1 ml-2">10. ii) What percentage of the following pathogens cause AOM?</h5>
+                                </div>
+                                <div class="ans ml-2">
+                                    <label for="SPneumoniae">a) S. pneumoniae</label>
+                                    <input type="text" class="form-control" id="SPneumoniae" name="10_ii_a" required>
+                                </div>
+                                  <div class="ans ml-2">
+                                    <label for="HInfluenzae">b) H. influenzae</label>
+                                    <input type="text" class="form-control" id="HInfluenzae" name="10_ii_b" required>
+                                </div>
+                            </div>
+                        </div> -->
+
+                        <div class="question bg-white p-3 border-bottom">
+                           
+                            <div class="question bg-white p-3 border-bottom">
+                                <div class="d-flex flex-row align-items-center question-title">
+                                    <h3 class="text-danger">Q</h3>
+                                    <h5 class="mt-1 ml-2">7. Let us know your favourite topic that was covered during the event</h5>
+                                </div>
+                                <div class="ans ml-2">
+                                    <input type="text" placeholder="Write your message.." class="form-control" id="session9" name="question9" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="d-flex flex-row justify-content-between align-items-center p-3 bg-white">
+                            <!-- <button class="btn btn-primary d-flex align-items-center btn-danger" type="button"><i class="fa fa-angle-left mt-1 mr-1"></i>&nbsp;previous</button> -->
+                            <button id="submitwhatNext"
+                                class="mybtn"
+                                type="submit">Submit<i class="fa fa-angle-right ml-2"></i></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5" id="tnk" style="display: none;">
+        <div class="d-flex justify-content-center row">
+            <div class="col-md-10 col-lg-10">
+                <div class="border">
+                    <div class="question bg-white p-3 border-bottom">
+                        <div class="d-flex flex-row align-items-center mcq"
+                            style="text-align: center; justify-content: center;">
+                            <h4> Thank you for submission</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./assets/js/jquery-3.6.0.min.js"></script>
+    <!-- <script src="./assets/js/library/jquery.mobile-1.5.0-alpha.1.min.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-firestore.js"></script>
+    <script src="./assets/js/config.js"></script>
+    <script src="./index.js"></script>
+    <script src="./reorder.js"></script>
+
+</body>
+
+</html>

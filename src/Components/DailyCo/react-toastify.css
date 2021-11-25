@@ -1,0 +1,16 @@
+.Toastify__toast-container--bottom-right {
+  bottom: 6.625rem;
+  right: 1em;
+}
+
+.Toastify__toast {
+  min-height: fit-content;
+}
+
+.Toastify__toast--default {
+  color: #666;
+}
+
+.Toastify__toast--warning {
+  color: #444;
+}
