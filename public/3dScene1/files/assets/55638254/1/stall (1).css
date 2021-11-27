@@ -1,0 +1,65 @@
+.stall-container {
+    position: absolute;
+    background-color: #000000c2;
+    color: #fff;
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+}
+
+.stall-box{
+   margin: 3% auto;
+    align-items: center;
+    height: 100%;
+}
+
+.stall-image{
+    width: auto;
+    height: 90%;
+    float: left;
+}
+
+.stall-video{
+float: left;
+    width: 90%;
+    height: 100%;
+}
+
+.stall-box-img{
+display: flex;
+    margin: 0px auto;
+    align-items: center;
+    height: 100%;
+}
+
+
+.stall-box-video-youtube{
+   margin: auto;
+    width: 60%;
+    height: 50%;
+}
+
+.pdf-stall-box{
+    margin: auto;
+    display: flex;
+    width: 70%;
+    height: 100%;
+}
+.iframe-PDF{
+    height: 90%;
+    width: 90%;
+    float: left;
+    margin: auto;
+}
+
+.stall-box-video-tag{
+margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.stall-video{
+  height: 100%;
+    width: 90%;
+   
+}
