@@ -10,6 +10,7 @@ import { UIContext } from "../../Context/UIContextProvider";
 import { formsData } from "../../Constants/NegotiationFormData/FormsData";
 import axios from "axios";
 import { Endpoints } from "../../Constants/EndPoints";
+import LobbyAudioCall from "../../Components/DailyCo/LobbyAudioCall";
 
 
 export default function Home() {
@@ -36,6 +37,29 @@ export default function Home() {
           videocall &&
           <DailyCoVideoCall callData={videocall} />
         }
+        {/* {
+          // for spatial calls, lobby calls
+          user && !videocall &&
+          <UIContext.Consumer>
+            {
+              v =>
+                <LobbyAudioCall
+                  name={user.displayName ? user.displayName : user.email.split("@")[0]}
+                  room={
+                    {
+                      "docName": "BreakoutA",
+                      "roomName": "rde_platform",
+                      "callStarted": true,
+                      "publicRoomName": "Lobby Room"
+                    }
+                  }
+                  UIContext={v}
+                  isCallVisible={true}
+                  temporaryRoom={true}
+                />
+            }
+          </UIContext.Consumer>
+        } */}
         {/* <Forms formsData={formsData} formid={1} /> */}
         <ThreeDScene />
         {

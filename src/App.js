@@ -9,8 +9,19 @@ import PollContextProvider from "./Context/Poll/PollContextProvider";
 import NotificationContextProvider from "./Context/Notification/NotificationContextProvider";
 import MediaModalContextProvider from "./Context/MediaModal/MediaModalContextProvider";
 import InCallChatContextProvider from "./Context/InCallChat/InCallChatContextProvider";
+import { useEffect, useMemo } from "react";
 
 function App() {
+  useMemo(() => {
+    window.console.devlog = (...args) => {
+      if (process.env.NODE_ENV !== "production") {
+        window.console.log(...args)
+      } else {
+        if (window.showDevlog)
+          window.console.log(...args)
+      }
+    }
+  }, [])
   return (
     <>
 
