@@ -17,7 +17,7 @@ OtherMove.prototype.initialize = function() {
    this.initY=this.playerEntity.getPosition().y;
     this.savePosition = new pc.Vec3();
     var pos=this.playerEntity.getPosition();
-    this.playerEntity.setPosition(pc.math.random(23,29),pos.y,pc.math.random(19,30));
+    this.playerEntity.setPosition(pc.math.random(23,27),pos.y,pc.math.random(19,30));
     // this.time = 0;
     // this.pointA=new pc.Vec3();
     // this.pointB=new pc.Vec3();

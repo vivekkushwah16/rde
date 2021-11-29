@@ -37,7 +37,7 @@ export default function Home() {
           videocall &&
           <DailyCoVideoCall callData={videocall} />
         }
-        {/* {
+        {
           // for spatial calls, lobby calls
           user && !videocall &&
           <UIContext.Consumer>
@@ -59,7 +59,7 @@ export default function Home() {
                 />
             }
           </UIContext.Consumer>
-        } */}
+        }
         {/* <Forms formsData={formsData} formid={1} /> */}
         <ThreeDScene />
         {

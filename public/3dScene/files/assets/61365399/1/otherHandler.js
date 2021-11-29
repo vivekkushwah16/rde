@@ -28,7 +28,7 @@ OtherHandler.prototype.initialize = function() {
     this.vRoomID=-1;
     this.firebaseID="";
     this.networkID="";
-    
+
     //this.entity.on('object:interact', this._onInteract, this);
     this.entity.on('object:onhover', this._onHover, this);
     this.entity.on('object:offhover', this._offHover, this);
