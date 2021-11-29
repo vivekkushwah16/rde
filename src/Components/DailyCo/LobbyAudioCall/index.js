@@ -106,7 +106,7 @@ export default class LobbyAudioCall extends Component {
     }
 
     componentWillUnmount() {
-        window.LobbyDailycoManager = { componentMounted: false };
+        window.parent.LobbyCall = { componentMounted: false };
         this.EndCallViaMenu();
     }
 
