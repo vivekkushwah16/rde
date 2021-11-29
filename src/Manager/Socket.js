@@ -2,7 +2,7 @@ import { io, Socket } from "socket.io-client";
 import { Endpoints } from "../Constants/EndPoints";
 
 const LocalURL = "http://127.0.0.1:9000/"
-const prodURL = 'https://api.rde.dev.zsservices.com'
+const prodURL = 'https://api.rnd_showcase.dev.zsservices.com'
 let URL = prodURL;
 if (window.location.href.includes('localhost')) {
     URL = LocalURL

@@ -78,7 +78,7 @@ export default function ThreeDScene() {
         window.parent.joinvRoomInformer = () => {
             setWatermarkVisibility(false);
             console.log("INFORMER::::joining a vRoom");
-            soundState.current=false;
+            soundState.current = false;
             muteSound();
             setInVideoCall(true);
         };
@@ -97,8 +97,8 @@ export default function ThreeDScene() {
                     if (backgroundAudio.current)
                         backgroundAudio.current.play();
                 }
-                
-                
+
+
             }, 1000);
         }
     }, []);
@@ -108,11 +108,11 @@ export default function ThreeDScene() {
             setBgAudioSrc("assets/sounds/lobby_bg.mp3");
         else if (currentScene.id == "library")
             setBgAudioSrc("assets/sounds/library_bg.mp3");
-        
-        if(canBGScorePlay.current&&window.localStorage.getItem("welcomeVO") == "false")
-            if(backgroundAudio.current)
+
+        if (canBGScorePlay.current && window.localStorage.getItem("welcomeVO") == "false")
+            if (backgroundAudio.current)
                 backgroundAudio.current.play();
-        if (!soundState.current) 
+        if (!soundState.current)
             mutePage();
         else
             unmutePage();
@@ -170,9 +170,9 @@ export default function ThreeDScene() {
 
     const muteSound = () => {
         // if (soundState.current) {
-            mutePage();
-            setSoundSegments([0, 31]);
-            setSoundLottiePlay(true);
+        mutePage();
+        setSoundSegments([0, 31]);
+        setSoundLottiePlay(true);
         // }
     }
 
@@ -188,7 +188,7 @@ export default function ThreeDScene() {
         soundState.current = !soundState.current;
         if (typeof window.parent.volumeSetKrdo !== "undefined")
             window.parent.volumeSetKrdo(soundState.current ? 1 : 0);
-        
+
         if (!soundState.current) {
             mutePage();
             setSoundSegments([0, 31]);
@@ -213,7 +213,7 @@ export default function ThreeDScene() {
         backgroundAudio.current.volume = 0.1;
     }
     const playAudio = (e) => {
-        if(canBGScorePlay.current&&window.localStorage.getItem("welcomeVO") == "false")
+        if (canBGScorePlay.current && window.localStorage.getItem("welcomeVO") == "false")
             e.target.play();
         // e.target.volume=0.1;
     }
@@ -240,8 +240,8 @@ export default function ThreeDScene() {
     const sideMenuClick = (() => {
         //playSoundOneShot("secondaryBtn.wav");
         var $side_menu_trigger = $('#nav-trigger'),
-        $content_wrapper = $('.main-content'),
-        $navigation = $('header');
+            $content_wrapper = $('.main-content'),
+            $navigation = $('header');
         $side_menu_trigger.toggleClass('is-clicked');
         $navigation.toggleClass('menu-open');
         $content_wrapper.toggleClass('menu-open').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function () {
@@ -257,7 +257,8 @@ export default function ThreeDScene() {
     });
 
     const logoutKrdo = (() => {
-        window.location = "https://idm.dev.zsservices.com/DJ/IdentityManager/app/Web/Logout.aspx?returnUrl=https%3A%2F%2Fnegotiation-academy.dev.zsservices.com";
+        let link = encodeURIComponent(window.location.href)
+        window.location = "https://idm.dev.zsservices.com/DJ/IdentityManager/app/Web/Logout.aspx?returnUrl=" + link;
     });
 
     const welcomeBtn = (() => {
@@ -269,8 +270,8 @@ export default function ThreeDScene() {
                 tutorialID.current.classList.add("animateTutorial");
                 tutorialID.current.classList.remove("exitScreen");
             }, 100);
-        }else{
-            canBGScorePlay.current=true;
+        } else {
+            canBGScorePlay.current = true;
             if (backgroundAudio.current)
                 backgroundAudio.current.play();
         }
@@ -278,12 +279,12 @@ export default function ThreeDScene() {
 
     const mainAreaBtn = () => {
         if (currentScene.id == "library") {
-                window.localStorage.setItem("lobbySpawning","library");   
+            window.localStorage.setItem("lobbySpawning", "library");
             if (typeof window.parent.switchScene !== "undefined")
                 window.parent.switchScene("lobby");
-        }else if (currentScene.id == "lobby"){
+        } else if (currentScene.id == "lobby") {
             if (typeof window.parent.teleportMyPlayer !== "undefined")
-            window.parent.teleportMyPlayer(25, 4);
+                window.parent.teleportMyPlayer(25, 4);
         }
     };
 
@@ -297,10 +298,10 @@ export default function ThreeDScene() {
             {
                 currentScene &&
                 <div className="contentCntr">
-                    <audio 
-                    src={bgAudioSrc} 
-                    ref={backgroundAudio} loop={true} 
-                    onCanPlayThrough={playAudio}
+                    <audio
+                        src={bgAudioSrc}
+                        ref={backgroundAudio} loop={true}
+                        onCanPlayThrough={playAudio}
                     ></audio>
                     <audio src={"assets/sounds/welcomeAudio.mp3"} ref={welcomeAudio} loop={false}></audio>
 
@@ -346,64 +347,64 @@ export default function ThreeDScene() {
                         {/* <iframe src={vCallSrc} id="vCall" style={{ display: vCallDisplay }}></iframe> */}
 
                         {
-                        <>
-                        <header id="sideMenuHeader" style={{ display: currentScene.id != "avatar"&&!inVideoCall ? "block" : "none" }}>
-                            <h1 id="site-title">
-                            </h1>
-                            <div id="nav-trigger" role="button">
-                                <div className={"line l-01"}></div>
-                                <div className={"line l-02"}></div>
-                                <div className={"line l-03"}></div>
-                            </div>
+                            <>
+                                <header id="sideMenuHeader" style={{ display: currentScene.id != "avatar" && !inVideoCall ? "block" : "none" }}>
+                                    <h1 id="site-title">
+                                    </h1>
+                                    <div id="nav-trigger" role="button">
+                                        <div className={"line l-01"}></div>
+                                        <div className={"line l-02"}></div>
+                                        <div className={"line l-03"}></div>
+                                    </div>
 
-                        </header>
+                                </header>
 
-                        <nav id="side-nav" className="open-sans-font" style={{ display: currentScene.id != "avatar"&& !inVideoCall ? "block" : "none" }}>
-                            <ul className="navigation">
-                                <ul className="sub-menu" style={{ display: "block" }}>
-                                    <li>
-                                        <a href="#0" className="sidePanelBtn" onClick={() => { endCall(); mainAreaBtn(); sideMenuClick(); }}>Main Area</a>
+                                <nav id="side-nav" className="open-sans-font" style={{ display: currentScene.id != "avatar" && !inVideoCall ? "block" : "none" }}>
+                                    <ul className="navigation">
+                                        <ul className="sub-menu" style={{ display: "block" }}>
+                                            <li>
+                                                <a href="#0" className="sidePanelBtn" onClick={() => { endCall(); mainAreaBtn(); sideMenuClick(); }}>Main Area</a>
 
-                                    </li>
-                                    <li><a href="#0" className="sidePanelBtn"
-                                        onClick={() => { connectToRoom("zs1"); sideMenuClick(); }}
-                                    >Plenary</a></li>
-                                    <li><a href="#0" id="breakoutSideBtn" className="sidePanelBtn"
-                                        onClick={() => { connectToRoom("zs3"); sideMenuClick(); }}
-                                    >Breakout Room</a></li>
-                                    <li><a href="#0" id="negotiationSideBtn" className="sidePanelBtn"
-                                        onClick={() => { connectToRoom("zs4"); sideMenuClick(); }}
-                                    >Negotiation Room</a></li>
-                                    {
-                                        currentScene.id!="library"&&
-                                        <li><a href="#0" id="negotiationSideBtn" className="sidePanelBtn"
-                                            onClick={() => { endCall(); window.parent.switchScene("library"); sideMenuClick(); }}
-                                        >Library</a></li>
-                                    }
-                                    <li style={{ paddingTop: "1rem", opacity: "0.5" }}>_____________________</li>
-                                    <li><a href="#0" id="negotiationSideBtn" className="sidePanelBtn"
-                                        onClick={() => { endCall(); window.parent.switchScene("avatar"); sideMenuClick(); }}
-                                    >Edit Your Avatar</a></li>
-                                    {/* <li><a href="#0" className="sidePanelBtn"
+                                            </li>
+                                            <li><a href="#0" className="sidePanelBtn"
+                                                onClick={() => { connectToRoom("zs1"); sideMenuClick(); }}
+                                            >Plenary</a></li>
+                                            <li><a href="#0" id="breakoutSideBtn" className="sidePanelBtn"
+                                                onClick={() => { connectToRoom("zs3"); sideMenuClick(); }}
+                                            >Breakout Room</a></li>
+                                            <li><a href="#0" id="negotiationSideBtn" className="sidePanelBtn"
+                                                onClick={() => { connectToRoom("zs4"); sideMenuClick(); }}
+                                            >Negotiation Room</a></li>
+                                            {
+                                                currentScene.id != "library" &&
+                                                <li><a href="#0" id="negotiationSideBtn" className="sidePanelBtn"
+                                                    onClick={() => { endCall(); window.parent.switchScene("library"); sideMenuClick(); }}
+                                                >Library</a></li>
+                                            }
+                                            <li style={{ paddingTop: "1rem", opacity: "0.5" }}>_____________________</li>
+                                            <li><a href="#0" id="negotiationSideBtn" className="sidePanelBtn"
+                                                onClick={() => { endCall(); window.parent.switchScene("avatar"); sideMenuClick(); }}
+                                            >Edit Your Avatar</a></li>
+                                            {/* <li><a href="#0" className="sidePanelBtn"
                                         onClick={() => { openSurveyForm(); sideMenuClick(); }}
                                     >Survey Form</a></li> */}
-                                    <li>
-                                        <a href={"mailto:immersivedesign@zs.com"} className="sidePanelBtn">Contact Us</a>
-                                    </li>
-                                    <li><a href="#0" className="sidePanelBtn"
-                                        onClick={() => { openFAQ(); sideMenuClick(); }}
-                                    >FAQs</a></li>
+                                            <li>
+                                                <a href={"mailto:immersivedesign@zs.com"} className="sidePanelBtn">Contact Us</a>
+                                            </li>
+                                            <li><a href="#0" className="sidePanelBtn"
+                                                onClick={() => { openFAQ(); sideMenuClick(); }}
+                                            >FAQs</a></li>
 
 
 
 
-                                    {/* <li><a href="#0" className="sidePanelBtn" onClick={logoutKrdo}>Logout</a></li> */}
+                                            {/* <li><a href="#0" className="sidePanelBtn" onClick={logoutKrdo}>Logout</a></li> */}
 
-                                </ul>
-                                <img src="/assets/svg/logout.svg" className="myBtn" style={{ paddingBottom: "20px", width: "60%", marginBottom: "10px" }} onClick={logoutKrdo}></img>
-                            </ul>
-                        </nav>
-                        </>
+                                        </ul>
+                                        <img src="/assets/svg/logout.svg" className="myBtn" style={{ paddingBottom: "20px", width: "60%", marginBottom: "10px" }} onClick={logoutKrdo}></img>
+                                    </ul>
+                                </nav>
+                            </>
                         }
                         {
                             currentScene.id != "avatar" &&
@@ -418,7 +419,7 @@ export default function ThreeDScene() {
                                     </div>
                                 }
                                 {
-                                    !inVideoCall&&
+                                    !inVideoCall &&
                                     <Map sceneId={currentScene.id} />
                                 }
                                 {

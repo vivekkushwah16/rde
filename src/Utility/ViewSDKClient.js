@@ -31,7 +31,7 @@ class ViewSDKClient {
     previewFile(divId, viewerConfig, fileLink, fileName, fileId) {
         let host = window.location.host
         let clientId = "8c0cd670273d451cbc9b351b11d22318"
-        if (host.includes('negotiation-academy.dev.zsservices.com')) {
+        if (host.includes('zsservices.com')) {
             clientId = "d58dfe692a854713a245e5b6afa59a2b"
         }
         const config = {

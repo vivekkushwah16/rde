@@ -1,4 +1,4 @@
-const productionAPIServerLink = 'https://api.rde.dev.zsservices.com'
+const productionAPIServerLink = 'https://api.rnd_showcase.dev.zsservices.com'
 const localAPIServerLink = '/api'
 let serverURL = productionAPIServerLink
 if (window.location.href.includes('localhost')) {
