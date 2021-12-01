@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import style from "../../Assets/css/global.module.css"
 import Circle from "../Circle";
 import { SlideContext } from "../RenderSlides"
-
+import "./style.css"
 const Enrollment = () => {
   const {setSlide} = useContext(SlideContext)
   const handleTimeClick = () => {
@@ -504,10 +504,10 @@ const Enrollment = () => {
           />
         </svg>
         
-        <div className={style.positionedCircle1}>
+        <div className={` ${style.positionedCircle1} pulse `}>
           <Circle onAction={handleTimeClick} />
         </div>
-        <div className={style.positionedCircle2}>
+        <div className={` ${style.positionedCircle2} pulse `}>
           <Circle onAction={handleCriticalLevelClick} />
         </div>
        

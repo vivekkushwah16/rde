@@ -13,7 +13,7 @@ function PatientsHome() {
       <section className={style.wrapper}>
         <img className={style.svg} src={banner} alt="background" />
         <div onClick={()=>setPlay(true)}>
-          <AudioIcon className={`audio3 playAudio ${play && "startLoader"}`} Time="4s"/>
+          <AudioIcon className={`audio3 playAudio ${play && "player"}`} Time="4s"/>
         </div>
         {/* <AudioIcon className="audio2" /> */}
         <div className={style["footer"]}>

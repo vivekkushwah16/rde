@@ -30,7 +30,7 @@ function ViewEmail() {
         </button>
         
         <div onClick={()=>setPlay(true)}>
-          <AudioIcon className={`audio playAudio ${play && "startLoader"}`} />
+          <AudioIcon className={`audio playAudio ${play && "player"}`} Time="4s" />
         </div>
 
         <div>

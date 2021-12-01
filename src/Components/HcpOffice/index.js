@@ -17,10 +17,10 @@ function HcpOffice() {
         <img className={style.svg} src={banner} alt="background" />
         {/* <img  src={audio} alt="audio" /> */}
         <div onClick={()=>setPlay(true)}>
-          <AudioIcon className={`audio1 playAudio ${play && "startLoader"}`} />
+          <AudioIcon className={`audio1 playAudio ${play && "player "}`} Time="4s" />
         </div>
         <div onClick={()=>setPlay2(true)}>
-          <AudioIcon className={`audio2 playAudio ${play2 && "startLoader"}`} />
+          <AudioIcon className={`audio2 playAudio ${play2 && "player "}`} Time="4s" /> 
         </div>
         {/* <img className="audio2" src={audio} alt="audio" /> */}
         <div className={style["footer"]}>
