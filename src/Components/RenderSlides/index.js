@@ -4,14 +4,16 @@ import HcpOffice from "../HcpOffice";
 import Office from "../Office";
 import PatientsHome from "../PatientsHome";
 import ViewEmail from "../ViewEmail";
-export const slideContext = createContext(null);
+
+export const SlideContext = createContext(null);
+
 function RenderSlides() {
   const [slide, setSlide] = useState(0);
   return (
-    <slideContext.Provider value={ {setSlide }}>
+    <SlideContext.Provider value={{ setSlide }}>
       <SwitchComponents slide={slide} />
       {/* <Enrollment /> */}
-    </slideContext.Provider>
+    </SlideContext.Provider>
   );
 }
 
