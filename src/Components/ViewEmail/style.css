@@ -6,7 +6,30 @@
   right: 18%;
   top: 18%;
 }
-/* .emailWrapper{
-  display: flex;
-  justify-content: center;
-} */
+.audio{
+  top:50%;
+  left:20%;
+  position: absolute;
+  z-index: 999;
+}
+.playAudio{
+  stroke-dasharray: 159;
+  stroke-dashoffset: 159;
+}
+
+
+.startLoader{
+  animation-name: loadTimer !important;
+   animation-timing-function: linear !important;
+   animation-fill-mode: forwards !important;
+   animation-duration: 4s !important;
+  /* animation:2s loadTimer linear forwards !important; */
+}
+@keyframes loadTimer {
+ 0%{
+  stroke-dashoffset: 159;
+ }  
+ 100%{
+  stroke-dashoffset: 0;
+ }
+}

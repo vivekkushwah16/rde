@@ -20,15 +20,15 @@ function RenderSlides() {
 
 function SwitchComponents({ slide }) {
   switch (slide) {
-    case 1:
-      return <Enrollment />;
     case 0:
+      return <Enrollment />;
+    case 1:
       return <ViewEmail />;
-    case 3:
+    case 2:
       return <Office />;
-    case 4:
+    case 3:
       return <HcpOffice />;
-    case 5:
+    case 4:
       return <PatientsHome />;
     default:
       return null;

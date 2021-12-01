@@ -2,6 +2,6 @@
   position: absolute;
   top:38%;
   left:68%;
-  transform: scale(1.2);
+  /* transform: scale(1.2); */
   cursor: pointer;
 }

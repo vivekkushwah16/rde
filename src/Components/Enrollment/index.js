@@ -4,7 +4,7 @@ import Circle from "../Circle";
 import { SlideContext } from "../RenderSlides"
 
 const Enrollment = () => {
-  const setSlide = useContext(SlideContext)
+  const {setSlide} = useContext(SlideContext)
   const handleTimeClick = () => {
     setSlide(1)
     console.log("clicked")

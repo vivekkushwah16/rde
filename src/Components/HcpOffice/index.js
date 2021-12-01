@@ -1,18 +1,27 @@
-import React from "react";
+import React,{useContext, useState} from "react";
 import style from "../../Assets/css/global.module.css";
 import banner from "../../Assets/svg/hcp.svg";
 // import audio from "../../Assets/Images/Group 1516.png";
+import CloseIcon from "../../Assets/svg/CloseIcon.js"
+import { SlideContext } from "../RenderSlides";
 
 import "./style.css";
 import AudioIcon from "../../Assets/svg/AudioIcon";
 function HcpOffice() {
+  const [play,setPlay]=useState(false)
+  const [play2,setPlay2]=useState(false)
+  const {setSlide}=useContext(SlideContext)
   return (
     <>
       <section className={style.wrapper}>
         <img className={style.svg} src={banner} alt="background" />
         {/* <img  src={audio} alt="audio" /> */}
-        <AudioIcon className="audio1" />
-        <AudioIcon className="audio2" />
+        <div onClick={()=>setPlay(true)}>
+          <AudioIcon className={`audio1 playAudio ${play && "startLoader"}`} />
+        </div>
+        <div onClick={()=>setPlay2(true)}>
+          <AudioIcon className={`audio2 playAudio ${play2 && "startLoader"}`} />
+        </div>
         {/* <img className="audio2" src={audio} alt="audio" /> */}
         <div className={style["footer"]}>
           <button  className={`${style.footerBtn} ${style.secondaryBtn}`} >
@@ -51,7 +60,7 @@ function HcpOffice() {
               fill="#F17922"
             />
           </svg>
-          <button className={style.footerBtn}>
+          <button className={style.footerBtn} onClick={()=>setSlide(4)}  >
             <svg className={style.icon}
               width="20"
               height="19"
@@ -70,6 +79,9 @@ function HcpOffice() {
             </svg>
           Patients<br/>home
           </button>
+        </div>
+        <div  >
+          <CloseIcon  className={style.Close2} onAction={()=>setSlide(0)}/>
         </div>
       </section>
     </>
