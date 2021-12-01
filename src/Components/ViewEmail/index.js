@@ -2,6 +2,7 @@ import React from "react";
 import style from "../../Assets/css/global.module.css";
 import banner from "../../Assets/svg/Frame.svg"
 import "./style.css"
+import CloseIcon from "../../Assets/svg/CloseIcon.js"
 const handleOpenEmail=()=>{
   console.log("open")
 }
@@ -15,6 +16,9 @@ function ViewEmail() {
        {/* <article className={"emailWrapper"}>
        <button className={style.closebutton}></button>
        </article> */}
+       <div  >
+          <CloseIcon  className={style.Close} />
+        </div>
       </div>
     </>
   );

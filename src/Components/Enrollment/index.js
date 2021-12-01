@@ -504,12 +504,14 @@ const Enrollment = () => {
             fill="#F17922"
           />
         </svg>
+        
         <div className={style.positionedCircle1}>
         <Circle  onAction={handleTimeClick}/>
         </div>
         <div className={style.positionedCircle2}>
         <Circle  onAction={handleCriticalLevelClick} />
         </div>
+       
       </div>
     </>
   );

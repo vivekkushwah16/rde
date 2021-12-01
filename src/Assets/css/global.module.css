@@ -89,3 +89,11 @@
 .icon:nth-child(odd){
   margin-right: 3rem;
 }
+.Close{
+  position: absolute;
+  top: 1%;
+  right: 15%;
+  width: 5rem;
+  height: 5rem;
+fill: #000;
+}
