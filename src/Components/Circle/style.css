@@ -1,0 +1,7 @@
+.Circle{
+width: 5rem;
+height: 5rem;
+background: rgba(241, 121, 34, 1);
+border-radius: 50%;
+cursor: pointer;
+}

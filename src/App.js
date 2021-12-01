@@ -1,4 +1,4 @@
-import Home from "./Pages/Home";
+// import Home from "./Pages/Home";
 import { UIContextProvider } from "./Context/UIContextProvider";
 import ChatContextProvider from "./Context/Chat/ChatContextProvider";
 import { Provider } from "react-redux";
@@ -10,6 +10,12 @@ import NotificationContextProvider from "./Context/Notification/NotificationCont
 import MediaModalContextProvider from "./Context/MediaModal/MediaModalContextProvider";
 import InCallChatContextProvider from "./Context/InCallChat/InCallChatContextProvider";
 import { useEffect, useMemo } from "react";
+import Enrollment from "./Components/Enrollment";
+import ViewEmail from "./Components/ViewEmail";
+import Office from "./Components/Office";
+import HcpOffice from "./Components/HcpOffice";
+import PatientsHome from "./Components/PatientsHome";
+import RenderSlides from "./Components/RenderSlides";
 
 function App() {
   useMemo(() => {
@@ -32,7 +38,13 @@ function App() {
               <PollContextProvider>
                 <NotificationContextProvider>
                   <InCallChatContextProvider>
-                    <Home />
+                    {/* <Home /> */}
+                    {/* <Enrollment /> */}
+                    {/* <ViewEmail /> */}
+                    {/* <Office /> */}
+                    {/* <HcpOffice /> */}
+                    {/* <PatientsHome /> */}
+                    <RenderSlides />
                   </InCallChatContextProvider>
                 </NotificationContextProvider>
               </PollContextProvider>

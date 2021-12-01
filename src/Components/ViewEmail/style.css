@@ -1,0 +1,12 @@
+.nextBTn{
+   margin-top: 10rem;
+}
+.positionedBtn{
+  position: absolute;
+  right: 18%;
+  top: 18%;
+}
+/* .emailWrapper{
+  display: flex;
+  justify-content: center;
+} */

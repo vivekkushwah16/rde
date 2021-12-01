@@ -1,0 +1,21 @@
+.audio1{
+  position: absolute;
+  top:38%;
+  left:20%;
+  transform: scale(1.2);
+  cursor: pointer;
+}
+.audio2{
+  position: absolute;
+  top:38%;
+  left:48%;
+  transform: scale(1.2);
+  cursor: pointer;
+}
+.footer{
+  display: flex;
+  position: absolute;
+  bottom: 3%;
+  left: 15%;
+  gap: 2rem;
+}
