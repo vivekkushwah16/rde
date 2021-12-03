@@ -98,6 +98,7 @@
 fill: #000;
 text-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
 cursor: pointer;
+z-index: 999;
 }
 .Close2{
   position: absolute;
@@ -108,5 +109,6 @@ cursor: pointer;
 fill: #000;
 text-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
 cursor: pointer;
+z-index: 999;
 }
 

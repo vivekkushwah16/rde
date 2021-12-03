@@ -17,11 +17,16 @@
   stroke-dashoffset: 159;
 }
 
-
+.pause{
+  animation-play-state: paused;
+}
+.start{
+  animation-play-state: running;
+}
 .player{
   animation-name: loadTimer !important;
    animation-timing-function: linear !important;
-   animation-fill-mode: forwards !important;
+   animation-fill-mode: backwards !important;
    /* animation-duration: 4s !important; */
   /* animation:2s loadTimer linear forwards !important; */
 }

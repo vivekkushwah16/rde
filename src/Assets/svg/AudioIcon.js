@@ -1,6 +1,7 @@
 import React from "react";
 
-const AudioIcon = ({className,Time}) => {
+const AudioIcon = ({className,Time,id,play}) => {
+  console.log(id,play)
   return (
     <>
       <svg
@@ -116,7 +117,7 @@ const AudioIcon = ({className,Time}) => {
           fill="white"
         />
         
-        <path  style={{animationDuration:Time}} className={className} 
+        <path  style={{animationDuration:Time}} className={`${className} ${id===play?"start":"pause"}`} id="startPlaying"
         d="M 26 0.500008 C 31.0434 0.500008 35.9736 1.99558 40.1671 4.79755 C 44.3605 7.59953 47.6289 11.5821 49.5589 16.2416 C 51.4889 20.9011 51.9939 26.0283 51.01 30.9748 C 50.0261 35.9213 47.5974 40.465 44.0312 44.0313 C 40.465 47.5975 35.9213 50.0261 30.9748 51.01 C 26.0283 51.9939 20.9011 51.4889 16.2416 49.5589 C 11.5821 47.6289 7.59953 44.3605 4.79755 40.1671 C 1.99558 35.9736 0.500008 31.0434 0.500008 26 C 0.500008 19.237 3.18658 12.7509 7.96876 7.96876 C 12.7509 3.18658 19.237 0.500008 26 0.500008 Z"
           stroke="white"
           stroke-width="3"

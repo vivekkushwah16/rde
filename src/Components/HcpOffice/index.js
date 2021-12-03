@@ -4,25 +4,29 @@ import banner from "../../Assets/svg/hcp.svg";
 // import audio from "../../Assets/Images/Group 1516.png";
 import CloseIcon from "../../Assets/svg/CloseIcon.js"
 import { SlideContext } from "../RenderSlides";
-
+import audio from "../../Assets/audio/audio.mp3";
+import audio2 from "../../Assets/audio/audio2.mp3";
 import "./style.css";
 import AudioIcon from "../../Assets/svg/AudioIcon";
+import { useAudioHook } from "../useAudioHook";
 function HcpOffice() {
-  const [play,setPlay]=useState(false)
-  const [play2,setPlay2]=useState(false)
+  
   const {setSlide}=useContext(SlideContext)
+  const{handleAudio,audioTime,play}=useAudioHook(audio);
+  const{handleAudio:handleAudio2,audioTime:audioTime2,play:play2}=useAudioHook(audio2);
+  
   return (
     <>
       <section className={style.wrapper}>
         <img className={style.svg} src={banner} alt="background" />
-        {/* <img  src={audio} alt="audio" /> */}
-        <div onClick={()=>setPlay(true)}>
-          <AudioIcon className={`audio1 playAudio ${play && "player "}`} Time="4s" />
+        
+        <div onClick={()=>handleAudio(1)}>
+          <AudioIcon className={`audio1 playAudio ${audioTime && "player "}`} Time={`${audioTime}s`} play={play} id={1} />
         </div>
-        <div onClick={()=>setPlay2(true)}>
-          <AudioIcon className={`audio2 playAudio ${play2 && "player "}`} Time="4s" /> 
+        <div onClick={()=>handleAudio2(2)}>
+          <AudioIcon className={`audio2 playAudio ${audioTime2 && "player "}`} Time={`${audioTime2}s`}  play={play2} id={2} /> 
         </div>
-        {/* <img className="audio2" src={audio} alt="audio" /> */}
+        
         <div className={style["footer"]}>
           <button  className={`${style.footerBtn} ${style.secondaryBtn}`} >
             <svg className={style.icon}

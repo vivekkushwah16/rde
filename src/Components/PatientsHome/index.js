@@ -5,18 +5,20 @@ import "./style.css";
 import AudioIcon from "../../Assets/svg/AudioIcon";
 import CloseIcon from "../../Assets/svg/CloseIcon.js"
 import { SlideContext } from "../RenderSlides";
+import { useAudioHook } from '../useAudioHook';
+import audio from "../../Assets/audio/audio.mp3";
 function PatientsHome() {
-  const[play,setPlay]=useState(false)
+  const{handleAudio,audioTime,play}=useAudioHook(audio);
   const {setSlide}=useContext(SlideContext)
   return (
     <>
       <section className={style.wrapper}>
         <img className={style.svg} src={banner} alt="background" />
-        <div onClick={()=>setPlay(true)}>
-          <AudioIcon className={`audio3 playAudio ${play && "player"}`} Time="4s"/>
+        <div onClick={()=>handleAudio(1)}>
+          <AudioIcon className={`audio3 playAudio ${audioTime && "player "}`} Time={`${audioTime}s`} play={play} id={1}  />
         </div>
         {/* <AudioIcon className="audio2" /> */}
-        <div className={style["footer"]}>
+        <div className={style["footer"]}>         
           <button  className={style.footerBtn} >
             <svg className={style.icon}
               width="19"
