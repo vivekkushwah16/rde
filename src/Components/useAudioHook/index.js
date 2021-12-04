@@ -30,7 +30,17 @@ export const useAudioHook = (audio) => {
     console.log("current");
     audioFile.currentTime = 0;
   });
- 
+  audioFile.addEventListener("progress", (e) => {
+    if(!e){
+
+      setPlay(null);
+      console.log("current");
+    }
+    else{
+      console.log("loaded")
+    }
+    // audioFile.currentTime = 0;
+  });
   return {
     handleAudio,
     audioTime,
