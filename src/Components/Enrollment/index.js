@@ -15,7 +15,7 @@ const Enrollment = () => {
   }
   return (
     <>
-      <div className={style.wrapper}>
+      <div className={style.wrapper2}>
         <svg
           className={style.svg}
           viewBox="0 0 826 528"

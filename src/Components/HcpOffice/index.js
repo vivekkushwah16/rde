@@ -17,7 +17,7 @@ function HcpOffice() {
   
   return (
     <>
-      <section className={style.wrapper}>
+      <section className={style.wrapper2}>
         <img className={style.svg} src={banner} alt="background" />
         
         <div onClick={()=>handleAudio(1)}>

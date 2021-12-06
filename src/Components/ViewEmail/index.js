@@ -18,7 +18,7 @@ function ViewEmail() {
   };
   return (
     <>
-      <div className={style.wrapper}>
+      <div className={style.wrapper2}>
         <img className={style.svg} src={banner} alt="banner" />
         <button
           className={`${style.button}  positionedBtn`}
@@ -40,7 +40,7 @@ function ViewEmail() {
         </div>
 
         <div>
-          <CloseIcon className={style.Close} onAction={() => setSlide(0)} />
+          <CloseIcon className="CloseViewEmailSlide"onAction={() => setSlide(0)} />
         </div>
       </div>
     </>

@@ -9,14 +9,14 @@ function Office() {
   const {setSlide}=useContext(SlideContext)
   return (
     <>
-      <section className={style.wrapper}>
+      <section className={style.wrapper2}>
       <img className={style.svg} src={banner} alt="background" />
       <div className={style.Container}>
         <img className="aboutImg" src={aboutPage} alt="summary" />
         <button className={style.button} onClick={()=>setSlide(3)} >Start</button>
       </div>
       <div  >
-          <CloseIcon  className={style.Close2} onAction={()=>setSlide(0)}/>
+          <CloseIcon  className="CloseOfficeSlide" onAction={()=>setSlide(0)}/>
         </div>
       </section>
     </>

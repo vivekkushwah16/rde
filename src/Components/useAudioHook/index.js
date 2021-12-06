@@ -19,7 +19,6 @@ export const useAudioHook = (audio) => {
       setAudioTime(audioFile.duration);
       console.log(audioFile.duration);
       console.log(audioFile.paused);
-     
     } else {
       audioFile.pause();
       console.log(audioFile.currentTime);
@@ -31,13 +30,11 @@ export const useAudioHook = (audio) => {
     audioFile.currentTime = 0;
   });
   audioFile.addEventListener("progress", (e) => {
-    if(!e){
-
+    if (!e) {
       setPlay(null);
       console.log("current");
-    }
-    else{
-      console.log("loaded")
+    } else {
+      console.log("loaded");
     }
     // audioFile.currentTime = 0;
   });

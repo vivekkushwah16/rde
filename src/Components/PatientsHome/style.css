@@ -5,3 +5,15 @@
   /* transform: scale(1.2); */
   cursor: pointer;
 }
+
+.ClosePatientSlide {
+  position: absolute;
+  top: 0%;
+  right: 9.5%;
+  width: 9rem;
+  height: 5rem;
+  fill: #000;
+  text-shadow: 0px 8px 15px rgb(0 0 0 / 10%);
+  cursor: pointer;
+  z-index: 999;
+}

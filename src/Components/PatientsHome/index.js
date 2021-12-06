@@ -12,14 +12,14 @@ function PatientsHome() {
   const {setSlide}=useContext(SlideContext)
   return (
     <>
-      <section className={style.wrapper}>
+      <section className={style.wrapper2}>
         <img className={style.svg} src={banner} alt="background" />
         <div onClick={()=>handleAudio(1)}>
           <AudioIcon className={`audio3 playAudio ${audioTime && "player "}`} Time={`${audioTime}s`} play={play} id={1}  />
         </div>
         {/* <AudioIcon className="audio2" /> */}
         <div className={style["footer"]}>         
-          <button  className={style.footerBtn} >
+          <button  className={style.footerBtn} onClick={()=>setSlide(3)}  >
             <svg className={style.icon}
               width="19"
               height="18"
@@ -76,7 +76,7 @@ function PatientsHome() {
           </button>
         </div>
         <div  >
-          <CloseIcon  className={style.Close2} onAction={()=>setSlide(0)}/>
+          <CloseIcon  className="ClosePatientSlide" onAction={()=>setSlide(0)}/>
         </div>
       </section>
     </>
