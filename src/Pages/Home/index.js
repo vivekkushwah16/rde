@@ -61,7 +61,7 @@ export default function Home() {
           </UIContext.Consumer>
         }
         {/* <Forms formsData={formsData} formid={1} /> */}
-        <ThreeDScene />
+        {/* <ThreeDScene /> */}
         {
           <div id={"debugger"} style={{ zIndex: "999", position: "absolute", top: "5px", left: "5px", backgroundColor: "gray", maxWidth: "30%", display: "none" }}>
 

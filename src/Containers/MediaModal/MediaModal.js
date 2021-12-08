@@ -12,7 +12,8 @@ export const ContentType = {
     Pdf: 'pdf',
     Image: 'image',
     Iframe: 'iframe',
-    Component: 'component'
+    Component: 'component',
+    FullComponent: 'full_component',
 }
 
 
@@ -46,7 +47,8 @@ export default function MediaModal() {
                             // if (modalDetails.type !== ContentType.Iframe)
                             closeMediaModal()
                         }}></div>
-                        <div className={`mediaModal_container ${modalDetails.type === ContentType.Image ? 'mediaModal_container_image' : ''} ${modalDetails.type === ContentType.Iframe ? 'mediaModal_container_iframe' : ''} ${modalDetails.type === ContentType.Pdf ? 'pdf-full' : ''} ${modalDetails.type === ContentType.Component ? 'componentFrame' : ''} `}
+                        <div className={`mediaModal_container ${modalDetails.type === ContentType.Image ? 'mediaModal_container_image' : ''} ${modalDetails.type === ContentType.Iframe ? 'mediaModal_container_iframe' : ''} ${modalDetails.type === ContentType.Pdf ? 'pdf-full' : ''} ${modalDetails.type === ContentType.Component ? 'componentFrame' : ''} 
+                        ${modalDetails.type === ContentType.FullComponent ? 'componentFrame componentFrame_Full' : ''}`}
                         // style={modalDetails.type === ContentType.Component ? { width: 'auto' } : {}}
                         >
                             {
@@ -86,7 +88,11 @@ export default function MediaModal() {
                                 <modalDetails.component data={modalDetails.data} />
                             }
                             {
-                                modalDetails.type !== ContentType.Component &&
+                                modalDetails.type === ContentType.FullComponent &&
+                                <modalDetails.component data={modalDetails.data} />
+                            }
+                            {
+                                modalDetails.type !== ContentType.Component && modalDetails.type !== ContentType.FullComponent &&
                                 <div className="mediaModal_container_loader">
                                     <div className="lds-dual-ring"></div>
                                 </div>

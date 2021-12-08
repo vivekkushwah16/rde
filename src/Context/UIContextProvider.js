@@ -6,6 +6,8 @@ import { firestore } from "../Firebase";
 import { NotificationManager } from "../Managers/NotificationManager";
 import { UserContext } from "./Auth/UserContextProvider";
 import { MediaModalContext } from "./MediaModal/MediaModalContextProvider";
+import RenderPerspective from "../Components/RenderPerspective";
+
 
 export const UIContext = createContext(null);
 
@@ -92,7 +94,12 @@ export const UIContextProvider = (props) => {
         //         name: "Charting Course High"
         //     })
         // }, 500)
-
+        window.parent.activateSpecs = (flag) => {
+            showMediaModal({ type: ContentType.FullComponent, component: RenderPerspective, data: { flag } })
+        }
+        setTimeout(() => {
+            window.parent.activateSpecs()
+        }, 500)
 
         window.parent.activateForm = (formid) => {
             if (PossibleFormData.hasOwnProperty(formid)) {

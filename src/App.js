@@ -17,10 +17,7 @@ import HcpOffice from "./Components/HcpOffice";
 import PatientsHome from "./Components/PatientsHome";
 import RenderSlides from "./Components/RenderSlides";
 import RenderPerspective from "./Components/RenderPerspective";
-
-
-
-
+import Home from "./Pages/Home"
 
 function App() {
   useMemo(() => {
@@ -41,14 +38,14 @@ function App() {
               <PollContextProvider>
                 <NotificationContextProvider>
                   <InCallChatContextProvider>
-                    {/* <Home /> */}
+                    <Home />
                     {/* <Enrollment /> */}
                     {/* <ViewEmail /> */}
                     {/* <Office /> */}
                     {/* <HcpOffice /> */}
                     {/* <PatientsHome /> */}
                     {/* <RenderSlides /> */}
-                    <RenderPerspective />
+                    {/* <RenderPerspective /> */}
                   </InCallChatContextProvider>
                 </NotificationContextProvider>
               </PollContextProvider>
