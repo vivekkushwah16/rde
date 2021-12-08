@@ -16,24 +16,24 @@ import Office from "./Components/Office";
 import HcpOffice from "./Components/HcpOffice";
 import PatientsHome from "./Components/PatientsHome";
 import RenderSlides from "./Components/RenderSlides";
-import PersPective from "./Components/Perspective.js";
-import blurBanner from "./Assets/Images/perspective/blurBanner.png"
-import banner from "./Assets/Images/perspective/image2.jpg"
+import RenderPerspective from "./Components/RenderPerspective";
+
+
+
+
 
 function App() {
   useMemo(() => {
     window.console.devlog = (...args) => {
       if (process.env.NODE_ENV !== "production") {
-        window.console.log(...args)
+        window.console.log(...args);
       } else {
-        if (window.showDevlog)
-          window.console.log(...args)
+        if (window.showDevlog) window.console.log(...args);
       }
-    }
-  }, [])
+    };
+  }, []);
   return (
     <>
-
       <Provider store={store}>
         <MediaModalContextProvider>
           <UIContextProvider>
@@ -48,7 +48,7 @@ function App() {
                     {/* <HcpOffice /> */}
                     {/* <PatientsHome /> */}
                     {/* <RenderSlides /> */}
-                    <PersPective x="430" y="100" maskID="glass" blurBanner={blurBanner} banner={banner}/>
+                    <RenderPerspective />
                   </InCallChatContextProvider>
                 </NotificationContextProvider>
               </PollContextProvider>

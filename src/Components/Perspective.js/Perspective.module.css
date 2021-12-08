@@ -4,7 +4,10 @@
   /* background: linear-gradient(to left ,rgba(0,0,0,0.6),rgba(0,0,0,0.8)), url(../../Assets/Images/perspective/GettyImages-1301014410\ edit.png) no-repeat ; */
   position: relative;
   overflow: hidden;
+ 
 }
+
+
 .glass{
   position: absolute;
   top:0;
@@ -23,3 +26,58 @@
  }
  .borderGlass{
    position: absolute}; */
+   /* .navBar{
+     position: absolute;
+     top: 0;
+     width: 100%;
+     display: flex;
+     background-color: #fff;
+     justify-content: space-between;
+     align-items: center;
+     padding: 0 2rem;
+     height: 10vh;
+     z-index: 1;
+   }
+   .navBar h1{
+   font-size: 4.5rem;
+   color: #383245;
+  }
+  .navOptions{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+  .navOptions p{
+    font-size: 1.5rem;
+    margin-right: 5rem;
+  }
+   button{
+    height: 4.5rem;
+    text-align: center;
+    font-size: 1.8rem;
+    border: 2px solid #EC7200;
+    display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 1rem; 
+   cursor: pointer;
+  
+  }
+  .CircleBtn{
+    width: 4.5rem;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    color: #fff;
+    background-color: #EC7200;
+  }
+ .CircleBtn.active{
+    background-color: #fff !important;
+    color: #EC7200 !important;
+  }
+  .OFFBtn{
+   padding: 0 1rem;
+    border-radius: 22px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.35);
+    color: #fff;
+    background-color: #EC7200;
+  } */
