@@ -17,13 +17,13 @@ function PersPective({ x, y, maskID, blurBanner, banner, SpexSvg,flag }) {
       <section
         className={Style.wrapper}
         onMouseMove={handleMouseMove}
-        style={{ background: `url(${blurBanner})` }}
+        style={{ background: `url(${blurBanner}) 100% 100%` }}
       >
         <div
           className={Style.glass}
           style={{
             opacity: `${opacity}`,
-            backgroundImage: `url(${banner})`,
+            background: `url(${banner}) 100% 100%`,
             clipPath: ` url(#${maskID})`,
           }}
         ></div>

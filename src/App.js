@@ -17,7 +17,7 @@ import HcpOffice from "./Components/HcpOffice";
 import PatientsHome from "./Components/PatientsHome";
 import RenderSlides from "./Components/RenderSlides";
 import RenderPerspective from "./Components/RenderPerspective";
-import Home from "./Pages/Home"
+import Home from './pages/Home'
 
 function App() {
   useMemo(() => {
