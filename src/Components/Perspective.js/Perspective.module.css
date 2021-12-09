@@ -1,11 +1,13 @@
 .wrapper{
   width: 100%;
   height: 100vh;
+  /* height: calc(100vw * 0.56); */
   /* background: linear-gradient(to left ,rgba(0,0,0,0.6),rgba(0,0,0,0.8)), url(../../Assets/Images/perspective/GettyImages-1301014410\ edit.png) no-repeat ; */
   position: relative;
   overflow: hidden;
-  
- 
+  background-size: contain;
+  background-repeat: no-repeat;
+ background-position: center;
 }
 
 
@@ -15,6 +17,9 @@
   /* background: url(../../Assets/Images/perspective/image2.jpg) no-repeat ; */
   width:100%;
   height: 100vh;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
   /* clip-path: url(#glass); */
 }
 /* .blurBackground{

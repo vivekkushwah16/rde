@@ -2,9 +2,10 @@
   position: absolute;
   top: 0;
   width: 100%;
-  display: flex;
+  display: grid;
   background-color: #fff;
-  justify-content: space-between;
+ grid-template-columns:35% 75%;
+ gap: 2rem;
   align-items: center;
   padding: 0 2rem;
   height: 10vh;
@@ -14,7 +15,6 @@
 .navBar h1{
 font-size: 4.5rem;
 color: #383245;
-
 }
 .navOptions{
  display: flex;
@@ -22,8 +22,10 @@ color: #383245;
  gap: 2rem;
 }
 .navOptions p{
- font-size: 1.5rem;
- margin-right: 5rem;
+ font-size: 1.4rem;
+ color: #383245;
+ line-height: 1.6;
+ max-width: 45%;
 }
 .navOptions button{
  height: 4.5rem;
@@ -54,4 +56,25 @@ padding: 0 1rem;
  box-shadow: 0 4px 10px rgba(0,0,0,0.35);
  color: #fff;
  background-color: #EC7200;
+}
+@media only screen and (max-width:1560px){
+  .navBar h1{
+    font-size: 3.5rem;
+    
+    }
+}
+@media only screen and (max-width:1370px){
+  .navBar h1{
+    font-size: 3rem !important;
+    }
+    .navBar{
+     
+     grid-template-columns:30% 70%;
+    }
+    .navOptions p{
+      font-size: 1.2rem;
+      color: #383245;
+      line-height: 1.6;
+      max-width: 45%;
+     }
 }

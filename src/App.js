@@ -38,14 +38,14 @@ function App() {
               <PollContextProvider>
                 <NotificationContextProvider>
                   <InCallChatContextProvider>
-                    <Home />
+                    {/* <Home /> */}
                     {/* <Enrollment /> */}
                     {/* <ViewEmail /> */}
                     {/* <Office /> */}
                     {/* <HcpOffice /> */}
                     {/* <PatientsHome /> */}
                     {/* <RenderSlides /> */}
-                    {/* <RenderPerspective /> */}
+                    <RenderPerspective />
                   </InCallChatContextProvider>
                 </NotificationContextProvider>
               </PollContextProvider>

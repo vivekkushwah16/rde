@@ -19,8 +19,8 @@ const RenderPerspective = () => {
           <h1 className={Style.pageHeading}>Patient’s Perspective </h1>
           <div className={Style.navOptions}>
             <p>
-              Move the glasses around to see the full picture. When you have{" "}
-              <br />
+              Move the glasses around to see the full picture. When you have
+              
               finished exploring, click to see another patient’s perspective
             </p>
             {frameData.map((item) => (

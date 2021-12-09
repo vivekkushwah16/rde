@@ -97,9 +97,9 @@ export const UIContextProvider = (props) => {
         window.parent.activateSpecs = (flag) => {
             showMediaModal({ type: ContentType.FullComponent, component: RenderPerspective, data: { flag } })
         }
-        setTimeout(() => {
-            window.parent.activateSpecs()
-        }, 500)
+        // setTimeout(() => {
+        //     window.parent.activateSpecs()
+        // }, 500)
 
         window.parent.activateForm = (formid) => {
             if (PossibleFormData.hasOwnProperty(formid)) {
