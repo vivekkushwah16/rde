@@ -1,0 +1,51 @@
+.wrapper{
+    background-color: #fff;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+}
+.patients{
+    width: 50rem;
+height: 25rem;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+background-color: #808080;
+color: #fff;
+user-select: none;
+border-radius: 5rem;
+padding: 4rem;
+position: relative;
+}
+.btnSection{
+    position: absolute;
+    bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+.playButton{
+   
+    display: block;
+    padding: 1rem 4rem;
+    text-align: center;
+    border-radius: 3rem;
+    cursor: pointer;
+    border: none;
+    background-color: #b3b3b3;
+    color: #fff;
+    font-size: 2rem;
+}
+.playButton img{
+    width: 70%;
+    margin: auto;
+}
+.patients h1{
+    font-size: 2rem !important;
+    line-height: 1.2;
+}
