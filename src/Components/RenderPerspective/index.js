@@ -6,9 +6,9 @@ import Style from "./Style.module.css";
 //Perspective Data
 
 const RenderPerspective = () => {
-  const flag="Purple";
+  const flag="Black";
   const [frame, setFrame] = useState(1);
-  const frameData =flag === "Black" ? perspectiveBlack  : flag === "Brown" ? perspectiveBrown :perspectivePurple
+  const frameData =  flag === "Black" ? perspectiveBlack  : flag === "Brown" ? perspectiveBrown :perspectivePurple
   function handleFrame(id) {
     setFrame(id);
   }
@@ -16,7 +16,7 @@ const RenderPerspective = () => {
     <>
       <div>
         <nav className={Style.navBar}>
-          <h1 className={Style.pageHeading}>Patient’s Perspective </h1>
+          <h1 className={Style.pageHeading}>{flag === "Black" ? "Sponsor’s Perspective" : flag === "Brown" ? "Site’s Perspective" :"Patient’s Perspective"} </h1>
           <div className={Style.navOptions}>
             <p>
               Move the glasses around to see the full picture. When you have
