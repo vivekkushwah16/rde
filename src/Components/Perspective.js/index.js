@@ -30,7 +30,7 @@ function PersPective({ x, y, maskID, blurBanner, banner, SpexSvg,flag }) {
 
         <SpexSvg
           style={{
-            transform: `translate(${xOffset}px,${yOffset}px) scale(0.6)`,
+            transform: `translate(${xOffset}px,${yOffset}px) `,
             opacity: `${opacity}`,
             transformOrigin: "center",
           }}

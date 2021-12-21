@@ -46,8 +46,8 @@ function App() {
                     {/* <HcpOffice /> */}
                     {/* <PatientsHome /> */}
                     {/* <RenderSlides /> */}
-                    {/* <RenderPerspective /> */}
-                    <Intrective_Wrapper />
+                    <RenderPerspective />
+                    {/* <Intrective_Wrapper /> */}
                   </InCallChatContextProvider>
                 </NotificationContextProvider>
               </PollContextProvider>
