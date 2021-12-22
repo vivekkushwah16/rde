@@ -1,11 +1,11 @@
 import React,{useContext, useState} from "react";
 import style from "../../Assets/css/global.module.css";
-import banner from "../../Assets/svg/hcp.svg";
+import banner from "../../Assets/Images/slides/banner3.jpg";
 // import audio from "../../Assets/Images/Group 1516.png";
 import CloseIcon from "../../Assets/svg/CloseIcon.js"
 import { SlideContext } from "../RenderSlides";
-import audio from "../../Assets/audio/audio.mp3";
-import audio2 from "../../Assets/audio/audio2.mp3";
+import audio from "../../Assets/audio/Audio/3. Post Visit Doctor Reflection.wav";
+import audio2 from "../../Assets/audio/Audio/2. Conversation.wav";
 import "./style.css";
 import AudioIcon from "../../Assets/svg/AudioIcon";
 import { useAudioHook } from "../useAudioHook";

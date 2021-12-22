@@ -1,7 +1,7 @@
 .audio3{
   position: absolute;
-  top:38%;
-  left:68%;
+  top:23%;
+  left:67%;
   /* transform: scale(1.2); */
   cursor: pointer;
 }
@@ -9,7 +9,7 @@
 .ClosePatientSlide {
   position: absolute;
   top: 0%;
-  right: 9.5%;
+  right: 1%;
   width: 9rem;
   height: 5rem;
   fill: #000;
