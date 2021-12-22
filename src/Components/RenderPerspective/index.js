@@ -6,7 +6,7 @@ import Style from "./Style.module.css";
 //Perspective Data
 
 const RenderPerspective = () => {
-  const flag="Black";
+  const flag="Brown";
   const [frame, setFrame] = useState(1);
   const frameData =  flag === "Black" ? perspectiveBlack  : flag === "Brown" ? perspectiveBrown :perspectivePurple
   function handleFrame(id) {
