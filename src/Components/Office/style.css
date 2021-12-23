@@ -1,14 +1,14 @@
-.aboutImg{
-  transform: scale(1.6);
+.positionBtn{
+  transform: translateY(-50%);
 }
-.CloseOfficeSlide {
+.CloseViewEmailSlide {
   position: absolute;
   top: 0%;
-  right: 9%;
+  right: 1%;
   width: 9rem;
   height: 5rem;
   fill: #000;
-  text-shadow: 0px 8px 15px rgb(0 0 0 / 10%);
+  text-shadow:  0px 14px 15px rgb(0 0 0 / 40%);
   cursor: pointer;
   z-index: 999;
 }

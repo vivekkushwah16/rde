@@ -4,12 +4,16 @@
   left:20%;
   /* transform: scale(1.2); */
   cursor: pointer;
+  /* box-shadow:  0px 14px 15px rgb(0 0 0 / 40%); */
+  /* border-radius: 50%; */
 }
 .audio2{
   position: absolute;
   top:38%;
   left:48%;
   /* transform: scale(1.2); */
+  /* box-shadow:  0px 14px 15px rgb(0 0 0 / 40%); */
+  /* border-radius: 50%; */
   cursor: pointer;
 }
 .footer{

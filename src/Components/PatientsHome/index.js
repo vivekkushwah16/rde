@@ -1,12 +1,12 @@
 import React,{useContext, useState} from 'react'
 import style from "../../Assets/css/global.module.css";
-import banner from "../../Assets/svg/patientHome.svg";
+import banner from "../../Assets/Images/slides/banner4.jpg";
 import "./style.css";
 import AudioIcon from "../../Assets/svg/AudioIcon";
 import CloseIcon from "../../Assets/svg/CloseIcon.js"
 import { SlideContext } from "../RenderSlides";
 import { useAudioHook } from '../useAudioHook';
-import audio from "../../Assets/audio/audio.mp3";
+import audio from "../../Assets/audio/Audio/4. Post Visit Patient Reflection.wav";
 function PatientsHome() {
   const{handleAudio,audioTime,play}=useAudioHook(audio);
   const {setSlide}=useContext(SlideContext)
