@@ -1,15 +1,21 @@
 import React, { useState } from "react";
 import PersPective from "../Perspective.js";
 import { perspectivePurple,perspectiveBrown,perspectiveBlack} from "../../Constants/PersPectiveData";
-import SpexSvg from "../SpexSvg";
+
 import Style from "./Style.module.css";
+import Black from "../SpexFrames/Black"
+import Brown from "../SpexFrames/Brown"
+import Purple from "../SpexFrames/Purple"
 //Perspective Data
 
 const RenderPerspective = () => {
-  const flag="Brown";
+  const flag="Black";
   const [frame, setFrame] = useState(1);
   const frameData =  flag === "Black" ? perspectiveBlack  : flag === "Brown" ? perspectiveBrown :perspectivePurple
+  const spexFrame =  flag === "Black" ?  Black : flag === "Brown" ? Brown : Purple
+
   function handleFrame(id) {
+    
     setFrame(id);
   }
   return (
@@ -66,7 +72,7 @@ const RenderPerspective = () => {
                 frame={frame}
                 blurBanner={item.blurImage}
                 banner={item.clearImage}
-                SpexSvg={SpexSvg}
+                Spex={spexFrame}
                 flag={flag}
               />
             )

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Style from "./Perspective.module.css";
-function PersPective({ x, y, maskID, blurBanner, banner, SpexSvg,flag }) {
+function PersPective({ x, y, maskID, blurBanner, banner, Spex,flag }) {
   const [xOffset, setXoffset] = useState(null);
   const [yOffset, setYoffset] = useState(null);
   const [opacity, setOpacity] = useState(0);
@@ -28,7 +28,7 @@ function PersPective({ x, y, maskID, blurBanner, banner, SpexSvg,flag }) {
           }}
         ></div>
 
-        <SpexSvg
+        <Spex
           style={{
             transform: `translate(${xOffset}px,${yOffset}px) `,
             opacity: `${opacity}`,
