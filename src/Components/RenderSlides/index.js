@@ -8,7 +8,7 @@ import ViewEmail from "../ViewEmail";
 export const SlideContext = createContext(null);
 
 function RenderSlides() {
-  const [slide, setSlide] = useState(0);
+  const [slide, setSlide] = useState(1);
   return (
     <SlideContext.Provider value={{ setSlide }}>
       <SwitchComponents slide={slide} />

@@ -1,10 +1,15 @@
-.nextBTn{
-   margin-top: 11.5rem;
-}
+
 .positionedBtn{
+  display: block;
   position: absolute;
-  right: 40%;
-  top: 34%;
+  right: 50%;
+  top: 50%;
+  margin-top: -9.7%;
+  margin-right: -9.8%;
+}
+.nextBTn{
+  margin-top: -1.2%;
+
 }
 .audio{
   bottom:13%;
@@ -66,4 +71,18 @@
 .mailWrapper{
   position: absolute;
   z-index: 99999;
+}
+@media screen and (max-width:1400px) {
+  .positionedBtn{
+    transform: scale(0.8);
+    margin-right: -10%;
+  
+  }
+}
+@media screen and (max-width:1199px) {
+  .positionedBtn{
+    transform: scale(0.7);
+    margin-right: -10%;
+  
+  }
 }
